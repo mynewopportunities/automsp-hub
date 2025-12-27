@@ -37,23 +37,23 @@ export const Footer = () => {
   return (
     <footer className="bg-foreground text-background" role="contentinfo">
       {/* Main Footer */}
-      <div className="container mx-auto px-4 lg:px-8 py-8">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-6 lg:gap-8">
+      <div className="container mx-auto px-4 lg:px-8 py-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-4 lg:gap-6 items-end">
           {/* Brand Column */}
-          <div className="lg:col-span-2">
-            <Link to="/" className="inline-block mb-4">
+          <div className="lg:col-span-2 flex flex-col justify-end">
+            <Link to="/" className="inline-block mb-3">
               <img 
                 src={automspLogo} 
                 alt="AutoMSP Logo" 
-                className="h-28 sm:h-32 lg:h-36 w-auto object-contain"
+                className="h-40 sm:h-48 lg:h-56 w-auto object-contain"
               />
             </Link>
-            <p className="text-background/70 text-sm mb-4 max-w-xs leading-relaxed">
+            <p className="text-background/70 text-sm mb-3 max-w-xs leading-relaxed">
               AI-powered automation for Managed Service Providers on ServiceNow. Reduce SLA breaches and manual workload.
             </p>
             
             {/* Contact Info */}
-            <div className="space-y-2">
+            <div className="space-y-1.5">
               <div className="flex items-start gap-2 text-sm text-background/70">
                 <MapPin className="w-4 h-4 text-primary shrink-0 mt-0.5" />
                 <span>C1 - 1003, Burhani Centenary Park, Bhestan, Surat, Gujarat, India 395023</span>
@@ -70,9 +70,9 @@ export const Footer = () => {
           </div>
 
           {/* Solutions */}
-          <div>
-            <h3 className="font-bold font-heading mb-3 text-base">Solutions</h3>
-            <ul className="space-y-2">
+          <div className="flex flex-col justify-end">
+            <h3 className="font-bold font-heading mb-2 text-base">Solutions</h3>
+            <ul className="space-y-1.5">
               {footerLinks.solutions.map((link) => (
                 <li key={link.name}>
                   <Link
@@ -87,9 +87,9 @@ export const Footer = () => {
           </div>
 
           {/* Resources */}
-          <div>
-            <h3 className="font-bold font-heading mb-3 text-base">Resources</h3>
-            <ul className="space-y-2">
+          <div className="flex flex-col justify-end">
+            <h3 className="font-bold font-heading mb-2 text-base">Resources</h3>
+            <ul className="space-y-1.5">
               {footerLinks.resources.map((link) => (
                 <li key={link.name}>
                   <Link
@@ -104,9 +104,9 @@ export const Footer = () => {
           </div>
 
           {/* Company */}
-          <div>
-            <h3 className="font-bold font-heading mb-3 text-base">Company</h3>
-            <ul className="space-y-2">
+          <div className="flex flex-col justify-end">
+            <h3 className="font-bold font-heading mb-2 text-base">Company</h3>
+            <ul className="space-y-1.5">
               {footerLinks.company.map((link) => (
                 <li key={link.name}>
                   <Link
@@ -121,9 +121,9 @@ export const Footer = () => {
           </div>
 
           {/* Legal */}
-          <div>
-            <h3 className="font-bold font-heading mb-3 text-base">Legal</h3>
-            <ul className="space-y-2">
+          <div className="flex flex-col justify-end">
+            <h3 className="font-bold font-heading mb-2 text-base">Legal</h3>
+            <ul className="space-y-1.5">
               {footerLinks.legal.map((link) => (
                 <li key={link.name}>
                   <Link
@@ -137,7 +137,7 @@ export const Footer = () => {
             </ul>
             
             {/* Social Links - Under Legal */}
-            <div className="flex gap-2 mt-4">
+            <div className="flex gap-2 mt-3">
               {socialLinks.map((item) => (
                 <a
                   key={item.name}
@@ -155,8 +155,8 @@ export const Footer = () => {
 
       {/* Bottom Bar */}
       <div className="border-t border-background/10">
-        <div className="container mx-auto px-4 lg:px-8 py-4">
-          <div className="flex flex-col md:flex-row justify-between items-center gap-3">
+        <div className="container mx-auto px-4 lg:px-8 py-3">
+          <div className="flex flex-col md:flex-row justify-between items-center gap-2">
             <p className="text-sm text-background/60">
               © {new Date().getFullYear()} AutoMSP. All rights reserved.
             </p>
