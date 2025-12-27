@@ -208,8 +208,8 @@ const Contact = () => {
                     </div>
                     <div>
                       <h3 className="font-semibold text-foreground">Email</h3>
-                      <a href="mailto:hello@automsp.ai" className="text-secondary hover:underline">
-                        hello@automsp.ai
+                      <a href="mailto:info@automsp.us" className="text-secondary hover:underline">
+                        info@automsp.us
                       </a>
                     </div>
                   </div>
@@ -220,8 +220,8 @@ const Contact = () => {
                     </div>
                     <div>
                       <h3 className="font-semibold text-foreground">Phone</h3>
-                      <a href="tel:+18005551234" className="text-secondary hover:underline">
-                        +1 (800) 555-1234
+                      <a href="tel:+13462003801" className="text-secondary hover:underline">
+                        +1 346 200 3801
                       </a>
                     </div>
                   </div>
@@ -233,8 +233,8 @@ const Contact = () => {
                     <div>
                       <h3 className="font-semibold text-foreground">Office</h3>
                       <p className="text-muted-foreground">
-                        San Francisco, CA<br />
-                        London, UK
+                        C1 - 1003, Burhani Centenary Park,<br />
+                        Bhestan, Surat, Gujarat, India 395023
                       </p>
                     </div>
                   </div>

@@ -54,17 +54,17 @@ export const Footer = () => {
             
             {/* Contact Info */}
             <div className="space-y-3 mb-6">
-              <div className="flex items-center gap-3 text-sm text-background/70">
-                <MapPin className="w-4 h-4 text-primary" />
-                <span>123 Innovation Drive, San Francisco, CA</span>
+              <div className="flex items-start gap-3 text-sm text-background/70">
+                <MapPin className="w-4 h-4 text-primary shrink-0 mt-0.5" />
+                <span>C1 - 1003, Burhani Centenary Park, Bhestan, Surat, Gujarat, India 395023</span>
               </div>
               <div className="flex items-center gap-3 text-sm text-background/70">
                 <Phone className="w-4 h-4 text-primary" />
-                <span>+1 (555) 123-4567</span>
+                <span>+1 346 200 3801</span>
               </div>
               <div className="flex items-center gap-3 text-sm text-background/70">
                 <Mail className="w-4 h-4 text-primary" />
-                <span>hello@automsp.ai</span>
+                <span>info@automsp.us</span>
               </div>
             </div>
 
