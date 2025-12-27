@@ -37,117 +37,120 @@ export const Footer = () => {
   return (
     <footer className="bg-foreground text-background" role="contentinfo">
       {/* Main Footer */}
-      <div className="container mx-auto px-4 lg:px-8 py-8">
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8 lg:gap-10">
-          {/* Section 1: Brand Info */}
-          <div className="col-span-2 md:col-span-3 lg:col-span-2">
-            <p className="text-background/70 text-sm mb-4 leading-relaxed">
-              AI-powered automation for Managed Service Providers on ServiceNow. Reduce SLA breaches and manual workload.
-            </p>
-            <div className="space-y-2">
-              <div className="flex items-start gap-2 text-sm text-background/70">
-                <MapPin className="w-4 h-4 text-primary shrink-0 mt-0.5" />
-                <span>C1 - 1003, Burhani Centenary Park, Bhestan, Surat, Gujarat, India 395023</span>
-              </div>
-              <div className="flex items-center gap-2 text-sm text-background/70">
-                <Phone className="w-4 h-4 text-primary" />
-                <span>+1 346 200 3801</span>
-              </div>
-              <div className="flex items-center gap-2 text-sm text-background/70">
-                <Mail className="w-4 h-4 text-primary" />
-                <span>info@automsp.us</span>
+      <div className="container mx-auto px-4 lg:px-8 py-6">
+        <div className="flex flex-col lg:flex-row gap-6 lg:gap-10">
+          {/* Logo - Left side */}
+          <div className="lg:w-32 flex items-center justify-center lg:justify-start">
+            <img 
+              src={logo} 
+              alt="AutoMSP Logo" 
+              className="h-28 w-auto object-contain"
+            />
+          </div>
+
+          {/* Content - Right side */}
+          <div className="flex-1 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6 lg:gap-8">
+            {/* Brand Info */}
+            <div className="col-span-2 md:col-span-3 lg:col-span-1">
+              <p className="text-background/70 text-sm mb-3 leading-relaxed">
+                AI-powered automation for MSPs on ServiceNow.
+              </p>
+              <div className="space-y-1.5">
+                <div className="flex items-start gap-2 text-xs text-background/70">
+                  <MapPin className="w-3.5 h-3.5 text-primary shrink-0 mt-0.5" />
+                  <span>C1-1003, Burhani Centenary Park, Bhestan, Surat, Gujarat, India 395023</span>
+                </div>
+                <div className="flex items-center gap-2 text-xs text-background/70">
+                  <Phone className="w-3.5 h-3.5 text-primary" />
+                  <span>+1 346 200 3801</span>
+                </div>
+                <div className="flex items-center gap-2 text-xs text-background/70">
+                  <Mail className="w-3.5 h-3.5 text-primary" />
+                  <span>info@automsp.us</span>
+                </div>
               </div>
             </div>
-          </div>
 
-          {/* Solutions */}
-          <div>
-            <h3 className="font-bold font-heading mb-3 text-sm">Solutions</h3>
-            <ul className="space-y-2">
-              {footerLinks.solutions.map((link) => (
-                <li key={link.name}>
-                  <Link
-                    to={link.href}
-                    className="text-sm text-background/70 hover:text-primary transition-colors"
-                  >
-                    {link.name}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          {/* Resources */}
-          <div>
-            <h3 className="font-bold font-heading mb-3 text-sm">Resources</h3>
-            <ul className="space-y-2">
-              {footerLinks.resources.map((link) => (
-                <li key={link.name}>
-                  <Link
-                    to={link.href}
-                    className="text-sm text-background/70 hover:text-primary transition-colors"
-                  >
-                    {link.name}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          {/* Company */}
-          <div>
-            <h3 className="font-bold font-heading mb-3 text-sm">Company</h3>
-            <ul className="space-y-2">
-              {footerLinks.company.map((link) => (
-                <li key={link.name}>
-                  <Link
-                    to={link.href}
-                    className="text-sm text-background/70 hover:text-primary transition-colors"
-                  >
-                    {link.name}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          {/* Legal + Social + Logo */}
-          <div className="flex flex-col">
-            <h3 className="font-bold font-heading mb-3 text-sm">Legal</h3>
-            <ul className="space-y-2">
-              {footerLinks.legal.map((link) => (
-                <li key={link.name}>
-                  <Link
-                    to={link.href}
-                    className="text-sm text-background/70 hover:text-primary transition-colors"
-                  >
-                    {link.name}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-            
-            {/* Social Links */}
-            <div className="flex gap-2 mt-4">
-              {socialLinks.map((item) => (
-                <a
-                  key={item.name}
-                  href={item.href}
-                  className="w-7 h-7 rounded-md bg-background/10 hover:bg-primary hover:text-primary-foreground flex items-center justify-center transition-all duration-300"
-                  aria-label={item.name}
-                >
-                  <item.icon className="w-3.5 h-3.5" />
-                </a>
-              ))}
+            {/* Solutions */}
+            <div>
+              <h3 className="font-bold font-heading mb-2 text-sm">Solutions</h3>
+              <ul className="space-y-1.5">
+                {footerLinks.solutions.map((link) => (
+                  <li key={link.name}>
+                    <Link
+                      to={link.href}
+                      className="text-xs text-background/70 hover:text-primary transition-colors"
+                    >
+                      {link.name}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
             </div>
-            
-            {/* Logo */}
-            <div className="mt-4">
-              <img 
-                src={logo} 
-                alt="AutoMSP Logo" 
-                className="h-48 w-auto object-contain"
-              />
+
+            {/* Resources */}
+            <div>
+              <h3 className="font-bold font-heading mb-2 text-sm">Resources</h3>
+              <ul className="space-y-1.5">
+                {footerLinks.resources.map((link) => (
+                  <li key={link.name}>
+                    <Link
+                      to={link.href}
+                      className="text-xs text-background/70 hover:text-primary transition-colors"
+                    >
+                      {link.name}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            {/* Company */}
+            <div>
+              <h3 className="font-bold font-heading mb-2 text-sm">Company</h3>
+              <ul className="space-y-1.5">
+                {footerLinks.company.map((link) => (
+                  <li key={link.name}>
+                    <Link
+                      to={link.href}
+                      className="text-xs text-background/70 hover:text-primary transition-colors"
+                    >
+                      {link.name}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            {/* Legal + Social */}
+            <div>
+              <h3 className="font-bold font-heading mb-2 text-sm">Legal</h3>
+              <ul className="space-y-1.5">
+                {footerLinks.legal.map((link) => (
+                  <li key={link.name}>
+                    <Link
+                      to={link.href}
+                      className="text-xs text-background/70 hover:text-primary transition-colors"
+                    >
+                      {link.name}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+              
+              {/* Social Links */}
+              <div className="flex gap-2 mt-3">
+                {socialLinks.map((item) => (
+                  <a
+                    key={item.name}
+                    href={item.href}
+                    className="w-6 h-6 rounded-md bg-background/10 hover:bg-primary hover:text-primary-foreground flex items-center justify-center transition-all duration-300"
+                    aria-label={item.name}
+                  >
+                    <item.icon className="w-3 h-3" />
+                  </a>
+                ))}
+              </div>
             </div>
           </div>
         </div>
