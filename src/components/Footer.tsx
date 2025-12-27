@@ -146,7 +146,7 @@ export const Footer = () => {
               <img 
                 src={logo} 
                 alt="AutoMSP Logo" 
-                className="h-20 w-auto object-contain"
+                className="h-48 w-auto object-contain"
               />
             </div>
           </div>
