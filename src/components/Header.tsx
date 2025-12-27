@@ -35,7 +35,7 @@ export const Header = () => {
           : 'bg-transparent'
       }`}
     >
-      <nav className="flex items-start justify-between pt-4 pb-4 w-full" aria-label="Main navigation">
+      <nav className="flex items-start justify-between pt-2 pb-2 w-full" aria-label="Main navigation">
         {/* Logo - Far Left, pulled up */}
         <Link to="/" className="flex items-center group pl-4 lg:pl-8 -mt-2">
           <img 
