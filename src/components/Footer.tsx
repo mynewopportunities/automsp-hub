@@ -45,7 +45,7 @@ export const Footer = () => {
               <img 
                 src={automspLogo} 
                 alt="AutoMSP Logo" 
-                className="h-16 w-auto object-contain"
+                className="h-28 sm:h-32 lg:h-36 w-auto object-contain"
               />
             </Link>
             <p className="text-background/70 text-sm mb-4 max-w-xs leading-relaxed">
