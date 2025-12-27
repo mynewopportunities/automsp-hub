@@ -9,12 +9,13 @@ export default {
       center: true,
       padding: "2rem",
       screens: {
-        "2xl": "1400px",
+        "2xl": "1200px",
       },
     },
     extend: {
       fontFamily: {
-        sans: ['Inter', 'system-ui', 'sans-serif'],
+        sans: ['Open Sans', 'system-ui', 'sans-serif'],
+        heading: ['Poppins', 'system-ui', 'sans-serif'],
       },
       colors: {
         border: "hsl(var(--border))",
@@ -71,8 +72,8 @@ export default {
         sm: "calc(var(--radius) - 4px)",
       },
       boxShadow: {
-        'glow-teal': 'var(--shadow-glow-teal)',
-        'glow-amber': 'var(--shadow-glow-amber)',
+        'glow-green': 'var(--shadow-glow-green)',
+        'glow-orange': 'var(--shadow-glow-orange)',
       },
       keyframes: {
         "accordion-down": {
