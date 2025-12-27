@@ -2,6 +2,12 @@ import { Header } from '@/components/Header';
 import { Footer } from '@/components/Footer';
 import { Button } from '@/components/ui/button';
 import { ArrowRight, Brain, Zap, BarChart3, CheckCircle2 } from 'lucide-react';
+import { InnovationRoadmap } from '@/components/InnovationRoadmap';
+import { PillarCards } from '@/components/PillarCards';
+import { GenAIModels } from '@/components/GenAIModels';
+import { NowAssistRoadmap } from '@/components/NowAssistRoadmap';
+import { IntelligentWorkflows } from '@/components/IntelligentWorkflows';
+import { CustomerServiceInnovations } from '@/components/CustomerServiceInnovations';
 
 const solutions = [
   {
@@ -71,8 +77,26 @@ const Solutions = () => {
           </div>
         </section>
 
+        {/* Intelligent Workflows Section */}
+        <IntelligentWorkflows />
+
+        {/* Pillar Cards */}
+        <PillarCards />
+
+        {/* Innovation Roadmap */}
+        <InnovationRoadmap />
+
+        {/* GenAI Models */}
+        <GenAIModels />
+
+        {/* Now Assist Roadmap */}
+        <NowAssistRoadmap />
+
+        {/* Customer Service Innovations */}
+        <CustomerServiceInnovations />
+
         {/* Solutions Grid */}
-        <section className="py-16 lg:py-24">
+        <section className="py-16 lg:py-24 bg-background">
           <div className="container mx-auto px-4 lg:px-8">
             <div className="space-y-16">
               {solutions.map((solution, index) => (
