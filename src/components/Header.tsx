@@ -1,5 +1,5 @@
-import { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { useState, useEffect } from 'react';
+import { Link, useLocation } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import { Menu, X, ChevronDown } from 'lucide-react';
 
@@ -13,17 +13,35 @@ const navigation = [
 
 export const Header = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+  const location = useLocation();
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 50);
+    };
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  const isActive = (href: string) => location.pathname === href;
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-xl border-b border-border/50">
+    <header 
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+        scrolled 
+          ? 'bg-card/95 backdrop-blur-xl shadow-lg border-b border-border' 
+          : 'bg-transparent'
+      }`}
+    >
       <nav className="container mx-auto flex items-center justify-between py-4 px-4 lg:px-8" aria-label="Main navigation">
         {/* Logo */}
-        <Link to="/" className="flex items-center gap-2 group">
-          <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-secondary to-accent flex items-center justify-center shadow-md group-hover:shadow-glow-teal transition-all duration-300">
-            <span className="text-secondary-foreground font-bold text-lg">A</span>
+        <Link to="/" className="flex items-center gap-3 group">
+          <div className="w-12 h-12 rounded-lg bg-primary flex items-center justify-center shadow-md group-hover:shadow-glow-green transition-all duration-300">
+            <span className="text-primary-foreground font-bold text-xl font-heading">A</span>
           </div>
-          <span className="text-xl font-bold text-foreground">
-            Auto<span className="text-secondary">MSP</span>
+          <span className="text-2xl font-bold text-foreground font-heading">
+            Auto<span className="text-primary">MSP</span>
           </span>
         </Link>
 
@@ -33,7 +51,11 @@ export const Header = () => {
             <Link
               key={item.name}
               to={item.href}
-              className="flex items-center gap-1 px-4 py-2 text-sm font-medium text-muted-foreground hover:text-foreground transition-colors rounded-lg hover:bg-muted/50"
+              className={`flex items-center gap-1 px-4 py-2 text-sm font-semibold transition-colors rounded-md font-heading ${
+                isActive(item.href)
+                  ? 'text-primary'
+                  : 'text-muted-foreground hover:text-foreground'
+              }`}
             >
               {item.name}
               {item.hasDropdown && <ChevronDown className="w-4 h-4" />}
@@ -43,10 +65,10 @@ export const Header = () => {
 
         {/* Desktop CTA */}
         <div className="hidden lg:flex items-center gap-3">
-          <Button variant="ghost" size="sm">
+          <Button variant="ghost" size="sm" className="font-heading">
             Customer Login
           </Button>
-          <Button variant="hero" size="default">
+          <Button variant="cta" size="default">
             Book a Demo
           </Button>
         </div>
@@ -54,7 +76,7 @@ export const Header = () => {
         {/* Mobile Menu Button */}
         <button
           type="button"
-          className="lg:hidden p-2 rounded-lg hover:bg-muted"
+          className="lg:hidden p-2 rounded-lg hover:bg-muted text-foreground"
           onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
           aria-expanded={mobileMenuOpen}
           aria-controls="mobile-menu"
@@ -70,13 +92,17 @@ export const Header = () => {
 
       {/* Mobile Menu */}
       {mobileMenuOpen && (
-        <div id="mobile-menu" className="lg:hidden bg-background border-b border-border">
+        <div id="mobile-menu" className="lg:hidden bg-card border-b border-border shadow-lg">
           <div className="container mx-auto px-4 py-4 space-y-2">
             {navigation.map((item) => (
               <Link
                 key={item.name}
                 to={item.href}
-                className="flex items-center justify-between px-4 py-3 text-base font-medium text-foreground hover:bg-muted rounded-lg"
+                className={`flex items-center justify-between px-4 py-3 text-base font-semibold rounded-lg font-heading ${
+                  isActive(item.href)
+                    ? 'text-primary bg-primary/5'
+                    : 'text-foreground hover:bg-muted'
+                }`}
                 onClick={() => setMobileMenuOpen(false)}
               >
                 {item.name}
@@ -87,7 +113,7 @@ export const Header = () => {
               <Button variant="outline" className="w-full">
                 Customer Login
               </Button>
-              <Button variant="hero" className="w-full">
+              <Button variant="cta" className="w-full">
                 Book a Demo
               </Button>
             </div>

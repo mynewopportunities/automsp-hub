@@ -5,27 +5,30 @@ import { cva, type VariantProps } from "class-variance-authority";
 import { cn } from "@/lib/utils";
 
 const buttonVariants = cva(
-  "inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-lg text-sm font-semibold ring-offset-background transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0",
+  "inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-semibold ring-offset-background transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 font-heading",
   {
     variants: {
       variant: {
         default: "bg-primary text-primary-foreground hover:bg-primary/90 shadow-md hover:shadow-lg",
         destructive: "bg-destructive text-destructive-foreground hover:bg-destructive/90",
         outline: "border-2 border-border bg-transparent hover:bg-muted hover:border-primary/30",
-        secondary: "bg-secondary text-secondary-foreground hover:bg-secondary/80 shadow-md hover:shadow-glow-teal",
+        secondary: "bg-secondary text-secondary-foreground hover:bg-secondary/90 shadow-md hover:shadow-glow-orange",
         ghost: "hover:bg-muted hover:text-foreground",
-        link: "text-secondary underline-offset-4 hover:underline",
-        // Hero button variants
-        hero: "bg-cta text-cta-foreground hover:brightness-110 shadow-lg hover:shadow-glow-amber transform hover:-translate-y-0.5",
+        link: "text-primary underline-offset-4 hover:underline",
+        // Soliur-style hero buttons
+        hero: "bg-primary text-primary-foreground hover:brightness-110 shadow-lg hover:shadow-glow-green transform hover:-translate-y-0.5",
         heroOutline: "bg-transparent border-2 border-primary-foreground/30 text-primary-foreground hover:bg-primary-foreground/10 hover:border-primary-foreground/50 backdrop-blur-sm",
-        // Teal accent
-        accent: "bg-secondary text-secondary-foreground hover:bg-secondary/90 shadow-md hover:shadow-glow-teal transform hover:-translate-y-0.5",
+        // Orange CTA accent
+        cta: "bg-secondary text-secondary-foreground hover:brightness-110 shadow-lg hover:shadow-glow-orange transform hover:-translate-y-0.5",
+        ctaOutline: "bg-transparent border-2 border-secondary text-secondary hover:bg-secondary hover:text-secondary-foreground",
+        // Green accent
+        accent: "bg-primary text-primary-foreground hover:bg-primary/90 shadow-md hover:shadow-glow-green transform hover:-translate-y-0.5",
       },
       size: {
-        default: "h-11 px-5 py-2",
-        sm: "h-9 rounded-md px-4 text-xs",
-        lg: "h-12 rounded-lg px-8 text-base",
-        xl: "h-14 rounded-lg px-10 text-lg",
+        default: "h-12 px-6 py-2",
+        sm: "h-10 rounded-md px-4 text-xs",
+        lg: "h-14 rounded-md px-8 text-base",
+        xl: "h-16 rounded-md px-10 text-lg",
         icon: "h-10 w-10",
       },
     },
