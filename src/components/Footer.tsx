@@ -39,12 +39,12 @@ export const Footer = () => {
       {/* Main Footer */}
       <div className="container mx-auto px-4 lg:px-8 py-6">
         <div className="flex flex-col lg:flex-row gap-6 lg:gap-10">
-          {/* Logo - Left side */}
-          <div className="lg:w-32 flex items-center justify-center lg:justify-start">
+          {/* Logo - Left side, centered */}
+          <div className="lg:w-48 flex items-center justify-center">
             <img 
               src={logo} 
               alt="AutoMSP Logo" 
-              className="h-28 w-auto object-contain"
+              className="h-40 w-auto object-contain"
             />
           </div>
 
