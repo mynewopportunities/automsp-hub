@@ -54,13 +54,9 @@ export const Header = () => {
                 key={item.name}
                 to={item.href}
                 className={`flex items-center gap-1 px-4 py-2 text-base font-semibold transition-colors rounded-md font-heading ${
-                  scrolled 
-                    ? isActive(item.href)
-                      ? 'text-primary'
-                      : 'text-green-600 hover:text-green-700'
-                    : isActive(item.href)
-                      ? 'text-primary'
-                      : 'text-green-600 hover:text-green-700'
+                  isActive(item.href)
+                    ? 'text-green-600 hover:text-green-700'
+                    : 'text-green-600 hover:text-green-700'
                 }`}
               >
                 {item.name}
