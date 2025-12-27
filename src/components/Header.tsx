@@ -35,13 +35,13 @@ export const Header = () => {
           : 'bg-transparent'
       }`}
     >
-      <nav className="flex items-start justify-between pt-2 pb-4 w-full" aria-label="Main navigation">
-        {/* Logo - Far Left */}
-        <Link to="/" className="flex items-center group pl-4 lg:pl-8">
+      <nav className="flex items-start justify-between pt-4 pb-4 w-full" aria-label="Main navigation">
+        {/* Logo - Far Left, pulled up */}
+        <Link to="/" className="flex items-center group pl-4 lg:pl-8 -mt-2">
           <img 
             src={automspLogo} 
             alt="AutoMSP.us Logo" 
-            className="h-40 sm:h-44 lg:h-52 w-auto object-contain group-hover:opacity-90 transition-opacity"
+            className="h-40 sm:h-44 lg:h-52 w-auto object-contain group-hover:opacity-90 transition-opacity -translate-y-12"
           />
         </Link>
 
