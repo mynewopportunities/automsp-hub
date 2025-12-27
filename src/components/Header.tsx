@@ -36,17 +36,17 @@ export const Header = () => {
       }`}
     >
       <nav className="flex items-start justify-between py-1 w-full" aria-label="Main navigation">
-        {/* Logo - Far Left, pulled up */}
-        <Link to="/" className="flex items-center group pl-4 lg:pl-8 -mt-2">
+        {/* Logo - Far Left */}
+        <Link to="/" className="flex items-center group pl-4 lg:pl-8">
           <img 
             src={automspLogo} 
             alt="AutoMSP.us Logo" 
-            className="h-40 sm:h-44 lg:h-52 w-auto object-contain group-hover:opacity-90 transition-opacity -translate-y-12"
+            className="h-28 sm:h-32 lg:h-36 w-auto object-contain group-hover:opacity-90 transition-opacity"
           />
         </Link>
 
         {/* Center Navigation + Right CTAs */}
-        <div className="hidden lg:flex items-center gap-8 pr-4 lg:pr-8">
+        <div className="hidden lg:flex items-center gap-8 pr-4 lg:pr-8 pt-2">
           {/* Navigation Links */}
           <div className="flex items-center gap-1">
             {navigation.map((item) => (
@@ -56,7 +56,9 @@ export const Header = () => {
                 className={`flex items-center gap-1 px-4 py-2 text-base font-semibold transition-colors rounded-md font-heading ${
                   isActive(item.href)
                     ? 'text-primary'
-                    : 'text-white/90 hover:text-white'
+                    : scrolled 
+                      ? 'text-green-600 hover:text-green-700' 
+                      : 'text-white/90 hover:text-white'
                 }`}
               >
                 {item.name}
