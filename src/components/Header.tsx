@@ -37,7 +37,7 @@ export const Header = () => {
     >
       <nav className="container mx-auto flex items-center justify-between py-4 px-4 lg:px-8" aria-label="Main navigation">
         {/* Logo */}
-        <Link to="/" className="flex items-center group">
+        <Link to="/" className="flex items-center group -ml-2 lg:-ml-4">
           <img 
             src={automspLogo} 
             alt="AutoMSP.us Logo" 
