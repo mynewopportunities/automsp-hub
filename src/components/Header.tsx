@@ -35,13 +35,13 @@ export const Header = () => {
           : 'bg-transparent'
       }`}
     >
-      <nav className="container mx-auto flex items-center justify-between py-4 px-4 lg:px-8" aria-label="Main navigation">
+      <nav className="container mx-auto flex items-center justify-between py-4 px-0 lg:px-0" aria-label="Main navigation">
         {/* Logo */}
-        <Link to="/" className="flex items-center group -ml-2 lg:-ml-4">
+        <Link to="/" className="flex items-center group">
           <img 
             src={automspLogo} 
             alt="AutoMSP.us Logo" 
-            className="h-20 sm:h-24 lg:h-28 w-auto object-contain group-hover:opacity-90 transition-opacity"
+            className="h-24 sm:h-28 lg:h-32 w-auto object-contain group-hover:opacity-90 transition-opacity"
           />
         </Link>
 
@@ -54,7 +54,7 @@ export const Header = () => {
               className={`flex items-center gap-1 px-4 py-2 text-base font-semibold transition-colors rounded-md font-heading ${
                 isActive(item.href)
                   ? 'text-primary'
-                  : 'text-muted-foreground hover:text-foreground'
+                  : 'text-white/90 hover:text-white'
               }`}
             >
               {item.name}
@@ -65,7 +65,7 @@ export const Header = () => {
 
         {/* Desktop CTA */}
         <div className="hidden lg:flex items-center gap-3">
-          <Button variant="ghost" size="default" className="font-heading">
+          <Button variant="ghost" size="default" className="font-heading bg-green-600 text-white hover:bg-white hover:text-green-600 border border-transparent hover:border-green-600">
             Customer Login
           </Button>
           <Button variant="cta" size="default">
