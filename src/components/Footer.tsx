@@ -146,11 +146,11 @@ export const Footer = () => {
           </div>
 
           {/* Section 3: Logo - Right side */}
-          <div className="lg:w-28 flex items-center justify-center lg:justify-end">
+          <div className="lg:w-48 flex items-center justify-center lg:justify-end">
             <img 
               src={logo} 
               alt="AutoMSP Logo" 
-              className="h-16 w-auto object-contain"
+              className="h-40 w-auto object-contain"
             />
           </div>
         </div>
