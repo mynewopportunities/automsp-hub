@@ -35,9 +35,9 @@ export const Header = () => {
           : 'bg-transparent'
       }`}
     >
-      <nav className="container mx-auto flex items-center justify-between py-4 px-0 lg:px-0" aria-label="Main navigation">
-        {/* Logo */}
-        <Link to="/" className="flex items-center group">
+      <nav className="flex items-center justify-between py-4 w-full" aria-label="Main navigation">
+        {/* Logo - Far Left */}
+        <Link to="/" className="flex items-center group pl-4 lg:pl-8">
           <img 
             src={automspLogo} 
             alt="AutoMSP.us Logo" 
@@ -45,32 +45,35 @@ export const Header = () => {
           />
         </Link>
 
-        {/* Desktop Navigation */}
-        <div className="hidden lg:flex items-center gap-1">
-          {navigation.map((item) => (
-            <Link
-              key={item.name}
-              to={item.href}
-              className={`flex items-center gap-1 px-4 py-2 text-base font-semibold transition-colors rounded-md font-heading ${
-                isActive(item.href)
-                  ? 'text-primary'
-                  : 'text-white/90 hover:text-white'
-              }`}
-            >
-              {item.name}
-              {item.hasDropdown && <ChevronDown className="w-4 h-4" />}
-            </Link>
-          ))}
-        </div>
+        {/* Center Navigation + Right CTAs */}
+        <div className="hidden lg:flex items-center gap-8 pr-4 lg:pr-8">
+          {/* Navigation Links */}
+          <div className="flex items-center gap-1">
+            {navigation.map((item) => (
+              <Link
+                key={item.name}
+                to={item.href}
+                className={`flex items-center gap-1 px-4 py-2 text-base font-semibold transition-colors rounded-md font-heading ${
+                  isActive(item.href)
+                    ? 'text-primary'
+                    : 'text-white/90 hover:text-white'
+                }`}
+              >
+                {item.name}
+                {item.hasDropdown && <ChevronDown className="w-4 h-4" />}
+              </Link>
+            ))}
+          </div>
 
-        {/* Desktop CTA */}
-        <div className="hidden lg:flex items-center gap-3">
-          <Button variant="ghost" size="default" className="font-heading bg-green-600 text-white hover:bg-white hover:text-green-600 border border-transparent hover:border-green-600">
-            Customer Login
-          </Button>
-          <Button variant="cta" size="default">
-            Book a Demo
-          </Button>
+          {/* CTA Buttons */}
+          <div className="flex items-center gap-3">
+            <Button variant="ghost" size="default" className="font-heading bg-green-600 text-white hover:bg-white hover:text-green-600 border border-transparent hover:border-green-600">
+              Customer Login
+            </Button>
+            <Button variant="cta" size="default">
+              Book a Demo
+            </Button>
+          </div>
         </div>
 
         {/* Mobile Menu Button */}
