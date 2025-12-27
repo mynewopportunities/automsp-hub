@@ -41,34 +41,34 @@ export const Header = () => {
           <img 
             src={automspLogo} 
             alt="AutoMSP.us Logo" 
-            className="h-12 w-auto object-contain group-hover:opacity-90 transition-opacity"
+            className="h-16 md:h-20 w-auto object-contain group-hover:opacity-90 transition-opacity"
           />
         </Link>
 
         {/* Desktop Navigation */}
-        <div className="hidden lg:flex items-center gap-1">
+        <div className="hidden lg:flex items-center gap-2">
           {navigation.map((item) => (
             <Link
               key={item.name}
               to={item.href}
-              className={`flex items-center gap-1 px-4 py-2 text-sm font-semibold transition-colors rounded-md font-heading ${
+              className={`flex items-center gap-1 px-5 py-3 text-base font-semibold transition-colors rounded-md font-heading ${
                 isActive(item.href)
                   ? 'text-primary'
                   : 'text-muted-foreground hover:text-foreground'
               }`}
             >
               {item.name}
-              {item.hasDropdown && <ChevronDown className="w-4 h-4" />}
+              {item.hasDropdown && <ChevronDown className="w-5 h-5" />}
             </Link>
           ))}
         </div>
 
         {/* Desktop CTA */}
-        <div className="hidden lg:flex items-center gap-3">
-          <Button variant="ghost" size="sm" className="font-heading">
+        <div className="hidden lg:flex items-center gap-4">
+          <Button variant="ghost" size="lg" className="font-heading text-base">
             Customer Login
           </Button>
-          <Button variant="cta" size="default">
+          <Button variant="cta" size="lg" className="text-base px-8">
             Book a Demo
           </Button>
         </div>

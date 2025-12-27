@@ -123,14 +123,39 @@
 
   html {
     scroll-behavior: smooth;
+    font-size: 18px; /* Increased base font size for better readability */
   }
 
   body {
-    @apply bg-background text-foreground font-sans antialiased;
+    @apply bg-background text-foreground font-sans antialiased text-lg leading-relaxed;
   }
 
-  h1, h2, h3, h4, h5, h6 {
-    @apply font-heading;
+  h1 {
+    @apply font-heading text-5xl md:text-6xl lg:text-7xl font-bold leading-tight;
+  }
+
+  h2 {
+    @apply font-heading text-4xl md:text-5xl lg:text-6xl font-bold leading-tight;
+  }
+
+  h3 {
+    @apply font-heading text-3xl md:text-4xl font-semibold leading-snug;
+  }
+
+  h4 {
+    @apply font-heading text-2xl md:text-3xl font-semibold;
+  }
+
+  h5 {
+    @apply font-heading text-xl md:text-2xl font-medium;
+  }
+
+  h6 {
+    @apply font-heading text-lg md:text-xl font-medium;
+  }
+
+  p {
+    @apply text-lg md:text-xl leading-relaxed;
   }
 }
 
