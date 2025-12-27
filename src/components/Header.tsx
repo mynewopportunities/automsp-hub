@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import { Menu, X, ChevronDown } from 'lucide-react';
+import automspLogo from '@/assets/automsp-logo.jpg';
 
 const navigation = [
   { name: 'Solutions', href: '/solutions', hasDropdown: true },
@@ -36,13 +37,12 @@ export const Header = () => {
     >
       <nav className="container mx-auto flex items-center justify-between py-4 px-4 lg:px-8" aria-label="Main navigation">
         {/* Logo */}
-        <Link to="/" className="flex items-center gap-3 group">
-          <div className="w-12 h-12 rounded-lg bg-primary flex items-center justify-center shadow-md group-hover:shadow-glow-green transition-all duration-300">
-            <span className="text-primary-foreground font-bold text-xl font-heading">A</span>
-          </div>
-          <span className="text-2xl font-bold text-foreground font-heading">
-            Auto<span className="text-primary">MSP</span>
-          </span>
+        <Link to="/" className="flex items-center group">
+          <img 
+            src={automspLogo} 
+            alt="AutoMSP.us Logo" 
+            className="h-12 w-auto object-contain group-hover:opacity-90 transition-opacity"
+          />
         </Link>
 
         {/* Desktop Navigation */}
