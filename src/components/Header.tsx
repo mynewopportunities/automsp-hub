@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import { Menu, X, ChevronDown } from 'lucide-react';
-import automspLogo from '@/assets/automsp-logo.jpg';
+import automspLogo from '@/assets/automsp-logo.png';
 
 const navigation = [
   { name: 'Solutions', href: '/solutions', hasDropdown: true },
@@ -41,7 +41,7 @@ export const Header = () => {
           <img 
             src={automspLogo} 
             alt="AutoMSP.us Logo" 
-            className="h-14 sm:h-16 lg:h-20 w-auto object-contain group-hover:opacity-90 transition-opacity"
+            className="h-16 sm:h-20 lg:h-24 w-auto object-contain group-hover:opacity-90 transition-opacity"
           />
         </Link>
 
