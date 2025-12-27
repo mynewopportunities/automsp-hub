@@ -511,12 +511,12 @@ const Terms = () => {
 
                 <section className="mb-12">
                   <h2>21. CONTACT INFORMATION</h2>
-                  <p><strong>Legal Inquiries:</strong><br />Email: <a href="mailto:legal@automsp.com">legal@automsp.com</a></p>
-                  <p><strong>Support:</strong><br />Email: <a href="mailto:support@automsp.com">support@automsp.com</a><br />Phone: +1 (888) AUTO-MSP</p>
-                  <p><strong>Data Protection Officer:</strong><br />Email: <a href="mailto:dpo@automsp.com">dpo@automsp.com</a></p>
+                  <p><strong>Legal Inquiries:</strong><br />Email: <a href="mailto:legal@automsp.store">legal@automsp.store</a></p>
+                  <p><strong>Support:</strong><br />Email: <a href="mailto:support@automsp.store">support@automsp.store</a><br />Phone: +1 (510) 560 7084</p>
+                  <p><strong>Data Protection Officer:</strong><br />Email: <a href="mailto:dpo@automsp.store">dpo@automsp.store</a></p>
                   <p>
                     <strong>Mailing Address:</strong><br />
-                    AutoMSP Inc.<br />
+                    AutoMSP AI Automation Services.<br />
                     C1 - 1003, Burhani Centenary Park<br />
                     Bhestan, Surat, Gujarat<br />
                     India 395023
