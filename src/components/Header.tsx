@@ -35,9 +35,9 @@ export const Header = () => {
           : 'bg-transparent'
       }`}
     >
-      <nav className="flex items-start justify-between py-2 w-full" aria-label="Main navigation">
+      <nav className="flex items-end justify-between py-2 w-full" aria-label="Main navigation">
         {/* Logo - Far Left, Top Aligned */}
-        <Link to="/" className="flex items-center group pl-4 lg:pl-8">
+        <Link to="/" className="flex items-center group pl-4 lg:pl-8 -mt-2">
           <img 
             src={automspLogo} 
             alt="AutoMSP.us Logo" 
