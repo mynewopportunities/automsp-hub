@@ -1,8 +1,9 @@
 import { useState, useEffect } from 'react';
-import { Link, useLocation } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import { Menu, X, ChevronDown } from 'lucide-react';
 import automspLogo from '@/assets/automsp-logo.png';
+import { useAuth } from '@/hooks/useAuth';
 
 const navigation = [
   { name: 'Solutions', href: '/solutions', hasDropdown: true },
@@ -16,6 +17,8 @@ export const Header = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const location = useLocation();
+  const navigate = useNavigate();
+  const { user } = useAuth();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -67,8 +70,13 @@ export const Header = () => {
 
           {/* CTA Buttons */}
           <div className="flex items-center gap-3">
-            <Button variant="ghost" size="default" className="font-heading bg-green-600 text-white hover:bg-white hover:text-green-600 border border-transparent hover:border-green-600">
-              Customer Login
+            <Button 
+              variant="ghost" 
+              size="default" 
+              className="font-heading bg-green-600 text-white hover:bg-white hover:text-green-600 border border-transparent hover:border-green-600"
+              onClick={() => navigate(user ? '/portal' : '/auth')}
+            >
+              {user ? 'My Portal' : 'Customer Login'}
             </Button>
             <Button variant="cta" size="default">
               Book a Demo
@@ -113,8 +121,15 @@ export const Header = () => {
               </Link>
             ))}
             <div className="pt-4 space-y-3">
-              <Button variant="outline" className="w-full">
-                Customer Login
+              <Button 
+                variant="outline" 
+                className="w-full"
+                onClick={() => {
+                  navigate(user ? '/portal' : '/auth');
+                  setMobileMenuOpen(false);
+                }}
+              >
+                {user ? 'My Portal' : 'Customer Login'}
               </Button>
               <Button variant="cta" className="w-full">
                 Book a Demo
