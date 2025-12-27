@@ -12,53 +12,15 @@ const logos = [
   { name: 'Google', src: googleLogo, width: 'w-8 md:w-10' },
 ];
 
-const IBMLogo = () => (
-  <svg viewBox="0 0 100 40" className="w-full h-full" fill="currentColor">
-    <g className="text-[#0530AD]">
-      <rect x="0" y="0" width="24" height="4"/>
-      <rect x="0" y="6" width="24" height="4"/>
-      <rect x="6" y="12" width="12" height="4"/>
-      <rect x="6" y="18" width="12" height="4"/>
-      <rect x="0" y="24" width="24" height="4"/>
-      <rect x="0" y="30" width="24" height="4"/>
-      <rect x="0" y="36" width="24" height="4"/>
-      
-      <rect x="28" y="0" width="24" height="4"/>
-      <rect x="28" y="6" width="18" height="4"/>
-      <rect x="28" y="12" width="20" height="4"/>
-      <rect x="28" y="18" width="24" height="4"/>
-      <rect x="28" y="24" width="20" height="4"/>
-      <rect x="28" y="30" width="18" height="4"/>
-      <rect x="28" y="36" width="24" height="4"/>
-      
-      <rect x="56" y="0" width="8" height="4"/>
-      <rect x="66" y="0" width="8" height="4"/>
-      <rect x="76" y="0" width="24" height="4"/>
-      <rect x="56" y="6" width="8" height="4"/>
-      <rect x="68" y="6" width="6" height="4"/>
-      <rect x="76" y="6" width="6" height="4"/>
-      <rect x="84" y="6" width="6" height="4"/>
-      <rect x="92" y="6" width="8" height="4"/>
-      <rect x="62" y="12" width="6" height="4"/>
-      <rect x="70" y="12" width="6" height="4"/>
-      <rect x="82" y="12" width="8" height="4"/>
-      <rect x="92" y="12" width="8" height="4"/>
-      <rect x="62" y="18" width="14" height="4"/>
-      <rect x="82" y="18" width="8" height="4"/>
-      <rect x="92" y="18" width="8" height="4"/>
-      <rect x="62" y="24" width="6" height="4"/>
-      <rect x="70" y="24" width="6" height="4"/>
-      <rect x="82" y="24" width="8" height="4"/>
-      <rect x="92" y="24" width="8" height="4"/>
-      <rect x="56" y="30" width="8" height="4"/>
-      <rect x="68" y="30" width="6" height="4"/>
-      <rect x="76" y="30" width="6" height="4"/>
-      <rect x="84" y="30" width="6" height="4"/>
-      <rect x="92" y="30" width="8" height="4"/>
-      <rect x="56" y="36" width="8" height="4"/>
-      <rect x="66" y="36" width="8" height="4"/>
-      <rect x="76" y="36" width="24" height="4"/>
-    </g>
+const SalesforceLogo = () => (
+  <svg viewBox="0 0 120 80" className="w-full h-full" fill="none">
+    <path 
+      d="M50.5 16c-4.8 0-9 2.5-11.5 6.2-2.2-1.4-4.8-2.2-7.5-2.2-8 0-14.5 6.5-14.5 14.5 0 1.2.2 2.4.4 3.5C9.8 40 4 47 4 55.5 4 65.4 12 73.5 22 73.5c1.8 0 3.5-.2 5.2-.7 2.5 4.2 7 7.2 12.3 7.2 4.8 0 9-2.4 11.5-6 2.5 3.6 6.7 6 11.5 6 5.3 0 9.8-3 12.3-7.2 1.7.5 3.4.7 5.2.7 10 0 18-8.1 18-18 0-8.5-5.8-15.5-13.4-17.5.3-1.1.4-2.3.4-3.5 0-8-6.5-14.5-14.5-14.5-2.7 0-5.3.8-7.5 2.2C60.5 18.5 55.3 16 50.5 16z" 
+      fill="#00A1E0"
+    />
+    <text x="22" y="52" fill="white" fontSize="14" fontWeight="bold" fontFamily="Arial, sans-serif">
+      salesforce
+    </text>
   </svg>
 );
 
@@ -91,7 +53,7 @@ export const TrustedBy = () => {
           {/* First set of logos */}
           <div className="flex items-center gap-10 md:gap-14 lg:gap-20 px-5 md:px-7 lg:px-10">
             <div className="w-32 md:w-40 h-10 flex items-center justify-center opacity-70 hover:opacity-100 transition-opacity duration-300 flex-shrink-0">
-              <IBMLogo />
+              <SalesforceLogo />
             </div>
             {logos.map((logo) => (
               <LogoItem key={logo.name} logo={logo} />
@@ -101,7 +63,7 @@ export const TrustedBy = () => {
           {/* Duplicate set for seamless loop */}
           <div className="flex items-center gap-10 md:gap-14 lg:gap-20 px-5 md:px-7 lg:px-10">
             <div className="w-32 md:w-40 h-10 flex items-center justify-center opacity-70 hover:opacity-100 transition-opacity duration-300 flex-shrink-0">
-              <IBMLogo />
+              <SalesforceLogo />
             </div>
             {logos.map((logo) => (
               <LogoItem key={`${logo.name}-dup`} logo={logo} />
