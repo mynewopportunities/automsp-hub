@@ -41,7 +41,7 @@ export const Header = () => {
           <img 
             src={automspLogo} 
             alt="AutoMSP.us Logo" 
-            className="h-16 sm:h-20 lg:h-24 w-auto object-contain group-hover:opacity-90 transition-opacity"
+            className="h-20 sm:h-24 lg:h-28 w-auto object-contain group-hover:opacity-90 transition-opacity"
           />
         </Link>
 
