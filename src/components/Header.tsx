@@ -16,9 +16,9 @@ const navigation = [
 export const Header = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const { user } = useAuth();
   const location = useLocation();
   const navigate = useNavigate();
-  const { user } = useAuth();
 
   useEffect(() => {
     const handleScroll = () => {
