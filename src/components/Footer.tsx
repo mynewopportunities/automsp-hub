@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import { Linkedin, Twitter, Youtube, Mail, MapPin, Phone } from 'lucide-react';
+import automspLogo from '@/assets/automsp-logo.png';
 
 const footerLinks = {
   solutions: [
@@ -29,64 +30,49 @@ const socialLinks = [
   { name: 'LinkedIn', href: '#', icon: Linkedin },
   { name: 'Twitter', href: '#', icon: Twitter },
   { name: 'YouTube', href: '#', icon: Youtube },
-  { name: 'Email', href: 'mailto:hello@automsp.ai', icon: Mail },
+  { name: 'Email', href: 'mailto:info@automsp.us', icon: Mail },
 ];
 
 export const Footer = () => {
   return (
     <footer className="bg-foreground text-background" role="contentinfo">
       {/* Main Footer */}
-      <div className="container mx-auto px-4 lg:px-8 py-16">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-8 lg:gap-12">
+      <div className="container mx-auto px-4 lg:px-8 py-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-6 lg:gap-8">
           {/* Brand Column */}
           <div className="lg:col-span-2">
-            <Link to="/" className="flex items-center gap-3 mb-6">
-              <div className="w-12 h-12 rounded-lg bg-primary flex items-center justify-center">
-                <span className="text-primary-foreground font-bold text-xl font-heading">A</span>
-              </div>
-              <span className="text-2xl font-bold font-heading">
-                Auto<span className="text-primary">MSP</span>
-              </span>
+            <Link to="/" className="inline-block mb-4">
+              <img 
+                src={automspLogo} 
+                alt="AutoMSP Logo" 
+                className="h-16 w-auto object-contain"
+              />
             </Link>
-            <p className="text-background/70 text-sm mb-6 max-w-xs leading-relaxed">
+            <p className="text-background/70 text-sm mb-4 max-w-xs leading-relaxed">
               AI-powered automation for Managed Service Providers on ServiceNow. Reduce SLA breaches and manual workload.
             </p>
             
             {/* Contact Info */}
-            <div className="space-y-3 mb-6">
-              <div className="flex items-start gap-3 text-sm text-background/70">
+            <div className="space-y-2">
+              <div className="flex items-start gap-2 text-sm text-background/70">
                 <MapPin className="w-4 h-4 text-primary shrink-0 mt-0.5" />
                 <span>C1 - 1003, Burhani Centenary Park, Bhestan, Surat, Gujarat, India 395023</span>
               </div>
-              <div className="flex items-center gap-3 text-sm text-background/70">
+              <div className="flex items-center gap-2 text-sm text-background/70">
                 <Phone className="w-4 h-4 text-primary" />
                 <span>+1 346 200 3801</span>
               </div>
-              <div className="flex items-center gap-3 text-sm text-background/70">
+              <div className="flex items-center gap-2 text-sm text-background/70">
                 <Mail className="w-4 h-4 text-primary" />
                 <span>info@automsp.us</span>
               </div>
-            </div>
-
-            {/* Social Links */}
-            <div className="flex gap-3">
-              {socialLinks.map((item) => (
-                <a
-                  key={item.name}
-                  href={item.href}
-                  className="w-10 h-10 rounded-lg bg-background/10 hover:bg-primary hover:text-primary-foreground flex items-center justify-center transition-all duration-300"
-                  aria-label={item.name}
-                >
-                  <item.icon className="w-5 h-5" />
-                </a>
-              ))}
             </div>
           </div>
 
           {/* Solutions */}
           <div>
-            <h3 className="font-bold font-heading mb-4 text-lg">Solutions</h3>
-            <ul className="space-y-3">
+            <h3 className="font-bold font-heading mb-3 text-base">Solutions</h3>
+            <ul className="space-y-2">
               {footerLinks.solutions.map((link) => (
                 <li key={link.name}>
                   <Link
@@ -102,8 +88,8 @@ export const Footer = () => {
 
           {/* Resources */}
           <div>
-            <h3 className="font-bold font-heading mb-4 text-lg">Resources</h3>
-            <ul className="space-y-3">
+            <h3 className="font-bold font-heading mb-3 text-base">Resources</h3>
+            <ul className="space-y-2">
               {footerLinks.resources.map((link) => (
                 <li key={link.name}>
                   <Link
@@ -119,8 +105,8 @@ export const Footer = () => {
 
           {/* Company */}
           <div>
-            <h3 className="font-bold font-heading mb-4 text-lg">Company</h3>
-            <ul className="space-y-3">
+            <h3 className="font-bold font-heading mb-3 text-base">Company</h3>
+            <ul className="space-y-2">
               {footerLinks.company.map((link) => (
                 <li key={link.name}>
                   <Link
@@ -136,8 +122,8 @@ export const Footer = () => {
 
           {/* Legal */}
           <div>
-            <h3 className="font-bold font-heading mb-4 text-lg">Legal</h3>
-            <ul className="space-y-3">
+            <h3 className="font-bold font-heading mb-3 text-base">Legal</h3>
+            <ul className="space-y-2">
               {footerLinks.legal.map((link) => (
                 <li key={link.name}>
                   <Link
@@ -149,14 +135,28 @@ export const Footer = () => {
                 </li>
               ))}
             </ul>
+            
+            {/* Social Links - Under Legal */}
+            <div className="flex gap-2 mt-4">
+              {socialLinks.map((item) => (
+                <a
+                  key={item.name}
+                  href={item.href}
+                  className="w-8 h-8 rounded-md bg-background/10 hover:bg-primary hover:text-primary-foreground flex items-center justify-center transition-all duration-300"
+                  aria-label={item.name}
+                >
+                  <item.icon className="w-4 h-4" />
+                </a>
+              ))}
+            </div>
           </div>
         </div>
       </div>
 
       {/* Bottom Bar */}
       <div className="border-t border-background/10">
-        <div className="container mx-auto px-4 lg:px-8 py-6">
-          <div className="flex flex-col md:flex-row justify-between items-center gap-4">
+        <div className="container mx-auto px-4 lg:px-8 py-4">
+          <div className="flex flex-col md:flex-row justify-between items-center gap-3">
             <p className="text-sm text-background/60">
               © {new Date().getFullYear()} AutoMSP. All rights reserved.
             </p>
