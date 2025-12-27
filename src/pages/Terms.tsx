@@ -13,7 +13,7 @@ const Terms = () => {
         <Header />
         <main className="flex-1">
           {/* Hero Section */}
-          <section className="bg-gradient-to-b from-primary/5 to-background py-16 md:py-24">
+          <section className="bg-gradient-to-b from-primary/5 to-background pt-32 md:pt-40 pb-16 md:pb-24">
             <div className="container mx-auto px-4 lg:px-8">
               <div className="max-w-4xl mx-auto text-center">
                 <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold font-heading text-foreground mb-6">
