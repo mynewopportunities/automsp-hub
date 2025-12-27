@@ -8,6 +8,7 @@ import { ForWhom } from '@/components/ForWhom';
 import { Security } from '@/components/Security';
 import { CTASection } from '@/components/CTASection';
 import { Footer } from '@/components/Footer';
+import { TeamAvatars } from '@/components/TeamAvatars';
 
 const Index = () => {
   return (
@@ -16,6 +17,7 @@ const Index = () => {
       <main>
         <Hero />
         <TrustedBy />
+        <TeamAvatars />
         <ProblemSolution />
         <HowItWorks />
         <Metrics />
