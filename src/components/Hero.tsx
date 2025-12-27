@@ -1,5 +1,62 @@
 import { Button } from '@/components/ui/button';
 import { ArrowRight, Sparkles, Shield, Zap, Play } from 'lucide-react';
+import avatar1 from '@/assets/avatar-1.png';
+import avatar2 from '@/assets/avatar-2.png';
+import avatar3 from '@/assets/avatar-3.png';
+import avatar4 from '@/assets/avatar-4.png';
+import avatar5 from '@/assets/avatar-5.png';
+import avatar6 from '@/assets/avatar-6.png';
+import avatar7 from '@/assets/avatar-7.png';
+import avatar8 from '@/assets/avatar-8.png';
+import avatar9 from '@/assets/avatar-9.png';
+
+const heroAvatars = [
+  { src: avatar1, size: 'lg', top: '5%', right: '5%', delay: 0 },
+  { src: avatar2, size: 'md', top: '15%', right: '25%', delay: 0.2 },
+  { src: avatar3, size: 'sm', top: '35%', right: '8%', delay: 0.4 },
+  { src: avatar6, size: 'md', top: '55%', right: '20%', delay: 0.6 },
+  { src: avatar9, size: 'lg', top: '65%', right: '2%', delay: 0.8 },
+];
+
+const FloatingAvatar = ({ src, size, top, right, delay }: { 
+  src: string; 
+  size: 'sm' | 'md' | 'lg'; 
+  top: string; 
+  right: string;
+  delay: number;
+}) => {
+  const sizeClasses = {
+    sm: 'w-16 h-16 md:w-20 md:h-20',
+    md: 'w-20 h-20 md:w-28 md:h-28',
+    lg: 'w-24 h-24 md:w-36 md:h-36',
+  };
+
+  return (
+    <div 
+      className="absolute group animate-fade-in"
+      style={{ 
+        top, 
+        right, 
+        animationDelay: `${delay}s`,
+        animation: `float 6s ease-in-out infinite ${delay}s`
+      }}
+    >
+      {/* Outer glow ring */}
+      <div className={`absolute -inset-2 rounded-full bg-gradient-to-r from-primary via-[hsl(160,70%,45%)] to-primary opacity-50 blur-md group-hover:opacity-80 transition-opacity duration-500`} />
+      
+      {/* Avatar container */}
+      <div className={`relative rounded-full border-3 border-primary/60 overflow-hidden shadow-glow-green ${sizeClasses[size]}`}>
+        <img 
+          src={src} 
+          alt="AI Team Member" 
+          className="w-full h-full object-cover"
+        />
+        {/* Subtle inner glow */}
+        <div className="absolute inset-0 bg-gradient-to-t from-primary/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+      </div>
+    </div>
+  );
+};
 
 export const Hero = () => {
   return (
@@ -18,6 +75,31 @@ export const Hero = () => {
             backgroundSize: '60px 60px'
           }}
         />
+
+        {/* Flowing green wave SVG */}
+        <svg 
+          className="absolute bottom-0 left-0 right-0 w-full h-48 opacity-30"
+          viewBox="0 0 1200 200" 
+          preserveAspectRatio="none"
+        >
+          <defs>
+            <linearGradient id="heroWaveGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+              <stop offset="0%" stopColor="hsl(120, 60%, 35%)" />
+              <stop offset="50%" stopColor="hsl(150, 70%, 45%)" />
+              <stop offset="100%" stopColor="hsl(180, 60%, 40%)" />
+            </linearGradient>
+          </defs>
+          <path
+            d="M0,100 Q200,50 400,100 T800,80 T1200,120 L1200,200 L0,200 Z"
+            fill="url(#heroWaveGradient)"
+            className="animate-pulse"
+          />
+          <path
+            d="M0,140 Q300,90 600,130 T1200,100 L1200,200 L0,200 Z"
+            fill="url(#heroWaveGradient)"
+            opacity="0.5"
+          />
+        </svg>
       </div>
 
       <div className="container mx-auto px-4 lg:px-8 pt-32 pb-20 relative z-10">
@@ -75,67 +157,67 @@ export const Hero = () => {
             </div>
           </div>
 
-          {/* Right Content - Dashboard Preview */}
-          <div className="animate-fade-in-up animation-delay-600">
-            <div className="relative">
-              {/* Glow effect */}
-              <div className="absolute -inset-4 bg-gradient-to-r from-primary/30 via-secondary/20 to-primary/30 rounded-2xl blur-2xl" />
-              
-              {/* Dashboard mockup */}
-              <div className="relative glass-dark p-6 rounded-2xl shadow-2xl">
-                {/* Top bar */}
-                <div className="flex items-center gap-3 mb-6">
-                  <div className="flex gap-2">
-                    <div className="w-3 h-3 rounded-full bg-destructive/70" />
-                    <div className="w-3 h-3 rounded-full bg-secondary/70" />
-                    <div className="w-3 h-3 rounded-full bg-primary/70" />
-                  </div>
-                  <div className="flex-1 h-8 bg-primary-foreground/5 rounded-lg" />
-                </div>
-                
-                {/* Content grid */}
-                <div className="grid grid-cols-3 gap-4">
-                  {/* Sidebar */}
-                  <div className="space-y-3">
-                    {[1, 2, 3, 4].map((i) => (
-                      <div
-                        key={i}
-                        className={`h-10 rounded-lg ${i === 1 ? 'bg-primary/40' : 'bg-primary-foreground/5'}`}
-                      />
-                    ))}
-                  </div>
-                  
-                  {/* Main content */}
-                  <div className="col-span-2 space-y-4">
-                    {/* Stats row */}
-                    <div className="grid grid-cols-3 gap-3">
-                      {['Tickets Triaged', 'SLA Saved', 'Auto-Routed'].map((label, i) => (
-                        <div key={label} className="bg-primary-foreground/5 rounded-lg p-4">
-                          <div className={`text-2xl font-bold mb-1 ${i === 1 ? 'text-primary' : i === 0 ? 'text-secondary' : 'text-primary-foreground'}`}>
-                            {i === 0 ? '1,247' : i === 1 ? '99.2%' : '856'}
-                          </div>
-                          <div className="text-xs text-primary-foreground/50">{label}</div>
-                        </div>
-                      ))}
-                    </div>
-                    
-                    {/* Chart placeholder */}
-                    <div className="h-32 bg-primary-foreground/5 rounded-lg flex items-end justify-around p-4 gap-2">
-                      {[40, 65, 45, 80, 55, 90, 70].map((h, i) => (
-                        <div
-                          key={i}
-                          className={`w-full rounded-t ${i % 2 === 0 ? 'bg-gradient-to-t from-primary/80 to-primary/40' : 'bg-gradient-to-t from-secondary/60 to-secondary/30'}`}
-                          style={{ height: `${h}%` }}
-                        />
-                      ))}
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
+          {/* Right Content - Floating Avatar Collage */}
+          <div className="relative h-[500px] md:h-[600px] hidden lg:block">
+            {/* Floating avatars */}
+            {heroAvatars.map((avatar, index) => (
+              <FloatingAvatar
+                key={index}
+                src={avatar.src}
+                size={avatar.size as 'sm' | 'md' | 'lg'}
+                top={avatar.top}
+                right={avatar.right}
+                delay={avatar.delay}
+              />
+            ))}
+
+            {/* Connecting wave lines */}
+            <svg 
+              className="absolute inset-0 w-full h-full opacity-40 pointer-events-none"
+              viewBox="0 0 400 600"
+              preserveAspectRatio="none"
+            >
+              <defs>
+                <linearGradient id="connectGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <stop offset="0%" stopColor="hsl(120, 60%, 45%)" stopOpacity="0.6" />
+                  <stop offset="100%" stopColor="hsl(160, 70%, 50%)" stopOpacity="0.3" />
+                </linearGradient>
+              </defs>
+              <path
+                d="M350,50 Q250,150 300,250 Q350,350 280,450 Q200,550 350,600"
+                stroke="url(#connectGradient)"
+                strokeWidth="3"
+                fill="none"
+                className="animate-pulse"
+              />
+              <path
+                d="M380,100 Q300,200 350,300 Q400,400 320,500"
+                stroke="url(#connectGradient)"
+                strokeWidth="2"
+                fill="none"
+                opacity="0.5"
+              />
+            </svg>
+
+            {/* Floating decorative dots */}
+            <div className="absolute top-[20%] right-[40%] w-3 h-3 rounded-full bg-primary/60 animate-pulse" />
+            <div className="absolute top-[45%] right-[35%] w-2 h-2 rounded-full bg-secondary/50 animate-pulse" style={{ animationDelay: '0.5s' }} />
+            <div className="absolute top-[70%] right-[45%] w-4 h-4 rounded-full bg-primary/40 animate-pulse" style={{ animationDelay: '1s' }} />
           </div>
         </div>
       </div>
+
+      {/* Custom CSS for floating animation */}
+      <style>{`
+        @keyframes float {
+          0%, 100% {
+            transform: translateY(0px);
+          }
+          50% {
+            transform: translateY(-15px);
+          }
+        }
+      `}</style>
     </section>
   );
 };
