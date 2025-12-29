@@ -2,6 +2,7 @@ import { Header } from '@/components/Header';
 import { Footer } from '@/components/Footer';
 import { Button } from '@/components/ui/button';
 import { Target, Users, Lightbulb, ArrowRight, Linkedin } from 'lucide-react';
+import moizPhoto from '@/assets/moiz-photo.jpg';
 
 const values = [
   {
@@ -23,28 +24,10 @@ const values = [
 
 const team = [
   {
-    name: 'Alex Chen',
-    role: 'CEO & Co-Founder',
-    bio: 'Former ServiceNow Solutions Architect with 15+ years in enterprise IT.',
-    image: null,
-  },
-  {
-    name: 'Sarah Mitchell',
-    role: 'CTO & Co-Founder',
-    bio: 'PhD in Machine Learning, previously led AI teams at major cloud providers.',
-    image: null,
-  },
-  {
-    name: 'Marcus Johnson',
-    role: 'VP of Engineering',
-    bio: '20 years building enterprise software, deep expertise in ServiceNow platform.',
-    image: null,
-  },
-  {
-    name: 'Emily Rodriguez',
-    role: 'VP of Customer Success',
-    bio: 'Former MSP owner who understands the business inside and out.',
-    image: null,
+    name: 'Moiz Contractor',
+    role: 'Founder',
+    bio: 'ServiceNow Enthusiast with 15+ years in Enterprise IT.',
+    image: moizPhoto,
   },
 ];
 
@@ -129,15 +112,17 @@ const About = () => {
                 A blend of MSP expertise and cutting-edge AI knowledge.
               </p>
             </div>
-            <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-5xl mx-auto">
+            <div className="flex justify-center">
               {team.map((member) => (
-                <div key={member.name} className="bg-card rounded-2xl border border-border p-6 text-center hover:shadow-lg transition-shadow">
-                  <div className="w-20 h-20 rounded-full bg-gradient-to-br from-secondary/20 to-secondary/5 flex items-center justify-center mx-auto mb-4">
-                    <span className="text-2xl font-bold text-secondary">
-                      {member.name.split(' ').map(n => n[0]).join('')}
-                    </span>
+                <div key={member.name} className="bg-card rounded-2xl border border-border p-6 text-center hover:shadow-lg transition-shadow max-w-sm">
+                  <div className="w-24 h-24 rounded-full overflow-hidden mx-auto mb-4">
+                    <img 
+                      src={member.image} 
+                      alt={member.name}
+                      className="w-full h-full object-cover"
+                    />
                   </div>
-                  <h3 className="font-semibold text-foreground">{member.name}</h3>
+                  <h3 className="text-xl font-semibold text-foreground">{member.name}</h3>
                   <div className="text-sm text-secondary mb-2">{member.role}</div>
                   <p className="text-sm text-muted-foreground mb-4">{member.bio}</p>
                   <Button variant="ghost" size="sm" className="p-2">
