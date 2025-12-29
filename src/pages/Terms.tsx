@@ -191,8 +191,8 @@ const Terms = () => {
                   <h2>8. PAYMENT TERMS</h2>
                   
                   <h3>8.1 Subscription Plans</h3>
-                  <p><strong>Starter:</strong> $499/month (up to 100 managed clients)</p>
-                  <p><strong>Professional:</strong> $999/month (up to 300 managed clients)</p>
+                  <p><strong>Starter:</strong> ₹41,916/month ($499 USD)/month (up to 100 managed clients)</p>
+                  <p><strong>Professional:</strong> ₹83,916/month ($999 USD)/month (up to 300 managed clients)</p>
                   <p><strong>Enterprise:</strong> Custom pricing (300+ managed clients)</p>
                   <p>All plans include:</p>
                   <ul>
