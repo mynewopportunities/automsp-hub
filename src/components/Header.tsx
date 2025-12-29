@@ -7,6 +7,7 @@ import { useAuth } from '@/hooks/useAuth';
 
 const navigation = [
   { name: 'Solutions', href: '/solutions', hasDropdown: true },
+  { name: 'Pricing', href: '/pricing' },
   { name: 'Why AutoMSP', href: '/why-automsp' },
   { name: 'Resources', href: '/resources' },
   { name: 'About', href: '/about' },
