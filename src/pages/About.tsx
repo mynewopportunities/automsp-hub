@@ -3,6 +3,17 @@ import { Footer } from '@/components/Footer';
 import { Button } from '@/components/ui/button';
 import { Target, Users, Lightbulb, ArrowRight, Linkedin } from 'lucide-react';
 import moizPhoto from '@/assets/moiz-photo.jpg';
+import servicenowLogo from '@/assets/logos/servicenow.svg';
+import microsoftLogo from '@/assets/logos/microsoft.svg';
+import awsLogo from '@/assets/logos/aws.svg';
+import nvidiaLogo from '@/assets/logos/nvidia.svg';
+
+const partners = [
+  { name: 'ServiceNow', logo: servicenowLogo },
+  { name: 'Microsoft', logo: microsoftLogo },
+  { name: 'AWS', logo: awsLogo },
+  { name: 'NVIDIA', logo: nvidiaLogo },
+];
 
 const values = [
   {
@@ -143,13 +154,13 @@ const About = () => {
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto mb-8">
               We work closely with industry leaders to deliver the best possible experience for MSPs.
             </p>
-            <div className="flex flex-wrap justify-center gap-8">
-              {['ServiceNow', 'Microsoft', 'AWS', 'NVIDIA'].map((partner) => (
+            <div className="flex flex-wrap justify-center items-center gap-12">
+              {partners.map((partner) => (
                 <div
-                  key={partner}
-                  className="w-32 h-16 bg-card border border-border rounded-lg flex items-center justify-center"
+                  key={partner.name}
+                  className="h-12 flex items-center justify-center grayscale hover:grayscale-0 transition-all duration-300 opacity-70 hover:opacity-100"
                 >
-                  <span className="text-sm font-semibold text-muted-foreground">{partner}</span>
+                  <img src={partner.logo} alt={partner.name} className="h-full w-auto max-w-[140px] object-contain" />
                 </div>
               ))}
             </div>
