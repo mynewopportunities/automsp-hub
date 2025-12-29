@@ -11,6 +11,14 @@ import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle, Di
 import { toast } from 'sonner';
 import { Plus, Loader2, MessageSquare } from 'lucide-react';
 import { format } from 'date-fns';
+import { z } from 'zod';
+
+// Validation schema for ticket data
+const ticketSchema = z.object({
+  subject: z.string().trim().min(5, 'Subject must be at least 5 characters').max(200, 'Subject must be less than 200 characters'),
+  description: z.string().trim().min(20, 'Description must be at least 20 characters').max(5000, 'Description must be less than 5000 characters'),
+  priority: z.enum(['low', 'medium', 'high']),
+});
 
 interface Ticket {
   id: string;
@@ -31,6 +39,7 @@ export const PortalTickets = ({ userId }: PortalTicketsProps) => {
   const [loading, setLoading] = useState(true);
   const [creating, setCreating] = useState(false);
   const [dialogOpen, setDialogOpen] = useState(false);
+  const [errors, setErrors] = useState<Record<string, string>>({});
   const [newTicket, setNewTicket] = useState({
     subject: '',
     description: '',
@@ -59,17 +68,29 @@ export const PortalTickets = ({ userId }: PortalTicketsProps) => {
   }, [userId]);
 
   const handleCreateTicket = async () => {
-    if (!newTicket.subject.trim() || !newTicket.description.trim()) {
-      toast.error('Please fill in all required fields');
+    // Validate ticket data
+    const result = ticketSchema.safeParse(newTicket);
+    if (!result.success) {
+      const fieldErrors: Record<string, string> = {};
+      result.error.errors.forEach((err) => {
+        if (err.path[0]) {
+          fieldErrors[err.path[0] as string] = err.message;
+        }
+      });
+      setErrors(fieldErrors);
+      toast.error('Please fix the validation errors');
       return;
     }
 
+    setErrors({});
     setCreating(true);
+
+    const validatedData = result.data;
     const { error } = await supabase.from('support_tickets').insert({
       user_id: userId,
-      subject: newTicket.subject.trim(),
-      description: newTicket.description.trim(),
-      priority: newTicket.priority,
+      subject: validatedData.subject,
+      description: validatedData.description,
+      priority: validatedData.priority,
     });
 
     setCreating(false);
@@ -79,6 +100,7 @@ export const PortalTickets = ({ userId }: PortalTicketsProps) => {
     } else {
       toast.success('Ticket created successfully');
       setNewTicket({ subject: '', description: '', priority: 'medium' });
+      setErrors({});
       setDialogOpen(false);
       fetchTickets();
     }
@@ -136,10 +158,14 @@ export const PortalTickets = ({ userId }: PortalTicketsProps) => {
                 <Label htmlFor="subject">Subject</Label>
                 <Input
                   id="subject"
-                  placeholder="Brief description of the issue"
+                  placeholder="Brief description of the issue (min 5 characters)"
+                  maxLength={200}
                   value={newTicket.subject}
                   onChange={(e) => setNewTicket({ ...newTicket, subject: e.target.value })}
+                  className={errors.subject ? 'border-destructive' : ''}
                 />
+                {errors.subject && <p className="text-xs text-destructive">{errors.subject}</p>}
+                <p className="text-xs text-muted-foreground">{newTicket.subject.length}/200 characters</p>
               </div>
               <div className="space-y-2">
                 <Label htmlFor="priority">Priority</Label>
@@ -161,11 +187,15 @@ export const PortalTickets = ({ userId }: PortalTicketsProps) => {
                 <Label htmlFor="description">Description</Label>
                 <Textarea
                   id="description"
-                  placeholder="Provide details about your issue..."
+                  placeholder="Provide details about your issue (min 20 characters)..."
                   rows={5}
+                  maxLength={5000}
                   value={newTicket.description}
                   onChange={(e) => setNewTicket({ ...newTicket, description: e.target.value })}
+                  className={errors.description ? 'border-destructive' : ''}
                 />
+                {errors.description && <p className="text-xs text-destructive">{errors.description}</p>}
+                <p className="text-xs text-muted-foreground">{newTicket.description.length}/5000 characters</p>
               </div>
               <Button onClick={handleCreateTicket} className="w-full" disabled={creating}>
                 {creating ? <Loader2 className="w-4 h-4 animate-spin mr-2" /> : null}

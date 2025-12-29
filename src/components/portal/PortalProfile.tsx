@@ -8,7 +8,16 @@ import { Textarea } from '@/components/ui/textarea';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import { toast } from 'sonner';
 import { Loader2, Camera, Save } from 'lucide-react';
+import { z } from 'zod';
 import type { Profile } from '@/pages/Portal';
+
+// Validation schema for profile data
+const profileSchema = z.object({
+  full_name: z.string().trim().max(100, 'Name must be less than 100 characters'),
+  company_name: z.string().trim().max(100, 'Company name must be less than 100 characters'),
+  phone: z.string().trim().max(20, 'Phone must be less than 20 characters').regex(/^[\d\s\+\-\(\)]*$/, 'Invalid phone format').or(z.literal('')),
+  bio: z.string().trim().max(500, 'Bio must be less than 500 characters'),
+});
 
 interface PortalProfileProps {
   profile: Profile | null;
@@ -18,6 +27,7 @@ interface PortalProfileProps {
 export const PortalProfile = ({ profile, setProfile }: PortalProfileProps) => {
   const [saving, setSaving] = useState(false);
   const [uploading, setUploading] = useState(false);
+  const [errors, setErrors] = useState<Record<string, string>>({});
   const fileInputRef = useRef<HTMLInputElement>(null);
   const [formData, setFormData] = useState({
     full_name: profile?.full_name || '',
@@ -29,14 +39,31 @@ export const PortalProfile = ({ profile, setProfile }: PortalProfileProps) => {
   const handleSave = async () => {
     if (!profile?.id) return;
 
+    // Validate form data
+    const result = profileSchema.safeParse(formData);
+    if (!result.success) {
+      const fieldErrors: Record<string, string> = {};
+      result.error.errors.forEach((err) => {
+        if (err.path[0]) {
+          fieldErrors[err.path[0] as string] = err.message;
+        }
+      });
+      setErrors(fieldErrors);
+      toast.error('Please fix the validation errors');
+      return;
+    }
+
+    setErrors({});
     setSaving(true);
+
+    const validatedData = result.data;
     const { error } = await supabase
       .from('profiles')
       .update({
-        full_name: formData.full_name.trim() || null,
-        company_name: formData.company_name.trim() || null,
-        phone: formData.phone.trim() || null,
-        bio: formData.bio.trim() || null,
+        full_name: validatedData.full_name || null,
+        company_name: validatedData.company_name || null,
+        phone: validatedData.phone || null,
+        bio: validatedData.bio || null,
       })
       .eq('id', profile.id);
 
@@ -48,7 +75,7 @@ export const PortalProfile = ({ profile, setProfile }: PortalProfileProps) => {
       toast.success('Profile updated successfully');
       setProfile({
         ...profile,
-        ...formData,
+        ...validatedData,
       });
     }
   };
@@ -178,9 +205,12 @@ export const PortalProfile = ({ profile, setProfile }: PortalProfileProps) => {
                 <Input
                   id="full_name"
                   placeholder="John Doe"
+                  maxLength={100}
                   value={formData.full_name}
                   onChange={(e) => setFormData({ ...formData, full_name: e.target.value })}
+                  className={errors.full_name ? 'border-destructive' : ''}
                 />
+                {errors.full_name && <p className="text-xs text-destructive">{errors.full_name}</p>}
               </div>
               <div className="space-y-2">
                 <Label htmlFor="email">Email</Label>
@@ -197,9 +227,12 @@ export const PortalProfile = ({ profile, setProfile }: PortalProfileProps) => {
                 <Input
                   id="company"
                   placeholder="Acme Inc."
+                  maxLength={100}
                   value={formData.company_name}
                   onChange={(e) => setFormData({ ...formData, company_name: e.target.value })}
+                  className={errors.company_name ? 'border-destructive' : ''}
                 />
+                {errors.company_name && <p className="text-xs text-destructive">{errors.company_name}</p>}
               </div>
               <div className="space-y-2">
                 <Label htmlFor="phone">Phone Number</Label>
@@ -207,9 +240,12 @@ export const PortalProfile = ({ profile, setProfile }: PortalProfileProps) => {
                   id="phone"
                   type="tel"
                   placeholder="+1 (555) 123-4567"
+                  maxLength={20}
                   value={formData.phone}
                   onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
+                  className={errors.phone ? 'border-destructive' : ''}
                 />
+                {errors.phone && <p className="text-xs text-destructive">{errors.phone}</p>}
               </div>
             </div>
             <div className="space-y-2">
@@ -218,9 +254,13 @@ export const PortalProfile = ({ profile, setProfile }: PortalProfileProps) => {
                 id="bio"
                 placeholder="Tell us a bit about yourself..."
                 rows={4}
+                maxLength={500}
                 value={formData.bio}
                 onChange={(e) => setFormData({ ...formData, bio: e.target.value })}
+                className={errors.bio ? 'border-destructive' : ''}
               />
+              {errors.bio && <p className="text-xs text-destructive">{errors.bio}</p>}
+              <p className="text-xs text-muted-foreground">{formData.bio.length}/500 characters</p>
             </div>
             <Button onClick={handleSave} disabled={saving}>
               {saving ? <Loader2 className="w-4 h-4 animate-spin mr-2" /> : <Save className="w-4 h-4 mr-2" />}
