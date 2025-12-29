@@ -48,9 +48,22 @@ const Portal = () => {
 
       if (error) {
         toast.error('Failed to load profile');
-      } else {
-        setProfile(data);
+        setLoadingProfile(false);
+        return;
       }
+
+      // If profile has an avatar_url that's a storage path (not a full URL), get a signed URL
+      if (data?.avatar_url && !data.avatar_url.startsWith('http')) {
+        const { data: signedUrlData } = await supabase.storage
+          .from('avatars')
+          .createSignedUrl(data.avatar_url, 60 * 60 * 24); // 24 hour expiry
+        
+        if (signedUrlData?.signedUrl) {
+          data.avatar_url = signedUrlData.signedUrl;
+        }
+      }
+
+      setProfile(data);
       setLoadingProfile(false);
     };
 
