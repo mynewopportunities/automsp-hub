@@ -259,7 +259,7 @@ const Privacy = () => {
                     <li>Rights related to automated decision-making</li>
                   </ul>
 
-                  <p><strong>Data Protection Officer:</strong> Contact <a href="mailto:privacy@automsp.com">privacy@automsp.com</a></p>
+                  <p><strong>Data Protection Officer:</strong> Contact <a href="mailto:privacy@automsp.us">privacy@automsp.us</a></p>
 
                   <h3>7.2 CCPA Compliance (California Users)</h3>
                   
@@ -389,7 +389,7 @@ const Privacy = () => {
                     <li>Audit rights and compliance verification</li>
                     <li>International data transfer mechanisms</li>
                   </ul>
-                  <p>The DPA is available at: <a href="https://automsp.com/legal/dpa">https://automsp.com/legal/dpa</a></p>
+                  <p>The DPA is available at: <a href="https://automsp.us/legal/dpa">https://automsp.us/legal/dpa</a></p>
                 </section>
 
                 <section className="mb-12">
@@ -421,7 +421,7 @@ const Privacy = () => {
                     <li>Alternative solution offered if objection upheld</li>
                   </ul>
 
-                  <p>List of sub-processors: <a href="https://automsp.com/legal/subprocessors">https://automsp.com/legal/subprocessors</a></p>
+                  <p>List of sub-processors: <a href="https://automsp.us/legal/subprocessors">https://automsp.us/legal/subprocessors</a></p>
                 </section>
 
                 <section className="mb-12">
@@ -458,7 +458,7 @@ const Privacy = () => {
                   </ul>
 
                   <h3>14.4 Exercising Your Rights</h3>
-                  <p>Email privacy requests to: <strong><a href="mailto:privacy@automsp.com">privacy@automsp.com</a></strong></p>
+                  <p>Email privacy requests to: <strong><a href="mailto:privacy@automsp.us">privacy@automsp.us</a></strong></p>
                   <p>Include:</p>
                   <ul>
                     <li>Your name and email</li>
@@ -502,8 +502,8 @@ const Privacy = () => {
 
                 <section className="mb-12">
                   <h2>17. Contact Information</h2>
-                  <p><strong>Privacy Inquiries:</strong><br />Email: <a href="mailto:privacy@automsp.com">privacy@automsp.com</a><br />Phone: +1 (888) AUTO-MSP (or applicable regional number)</p>
-                  <p><strong>Data Protection Officer:</strong><br />Email: <a href="mailto:dpo@automsp.com">dpo@automsp.com</a></p>
+                  <p><strong>Privacy Inquiries:</strong><br />Email: <a href="mailto:privacy@automsp.us">privacy@automsp.us</a><br />Phone: +1 (510) 560 7084</p>
+                  <p><strong>Data Protection Officer:</strong><br />Email: <a href="mailto:dpo@automsp.us">dpo@automsp.us</a></p>
                   <p>
                     <strong>Mailing Address:</strong><br />
                     AutoMSP Inc.<br />

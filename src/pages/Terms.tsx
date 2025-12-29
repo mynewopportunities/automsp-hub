@@ -370,7 +370,7 @@ const Terms = () => {
                     <li>Data Processing Agreement (DPA) governs processing</li>
                     <li>Standard Contractual Clauses enable lawful transfers</li>
                     <li>Data subject rights are honored (access, deletion, portability)</li>
-                    <li>Data Protection Officer available (<a href="mailto:dpo@automsp.com">dpo@automsp.com</a>)</li>
+                    <li>Data Protection Officer available (<a href="mailto:dpo@automsp.us">dpo@automsp.us</a>)</li>
                   </ul>
 
                   <h3>15.2 CCPA (California Consumer Privacy Act)</h3>
@@ -408,7 +408,7 @@ const Terms = () => {
                     <li>30-day notice provided before adding new sub-processors</li>
                     <li>Customers have 15 days to object</li>
                     <li>Alternative solution offered if objection upheld</li>
-                    <li>Sub-processor list available at: <a href="https://automsp.com/legal/subprocessors">https://automsp.com/legal/subprocessors</a></li>
+                    <li>Sub-processor list available at: <a href="https://automsp.us/legal/subprocessors">https://automsp.us/legal/subprocessors</a></li>
                   </ul>
                 </section>
 
