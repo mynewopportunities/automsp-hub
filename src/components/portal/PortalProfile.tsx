@@ -82,23 +82,28 @@ export const PortalProfile = ({ profile, setProfile }: PortalProfileProps) => {
       return;
     }
 
-    const { data: { publicUrl } } = supabase.storage
-      .from('avatars')
-      .getPublicUrl(filePath);
+    // Store the file path in the database (not a public URL)
+    const avatarPath = filePath;
 
     const { error: updateError } = await supabase
       .from('profiles')
-      .update({ avatar_url: publicUrl })
+      .update({ avatar_url: avatarPath })
       .eq('id', profile.id);
 
-    setUploading(false);
-
     if (updateError) {
+      setUploading(false);
       toast.error('Failed to update avatar');
-    } else {
-      toast.success('Avatar updated');
-      setProfile({ ...profile, avatar_url: publicUrl });
+      return;
     }
+
+    // Get a signed URL for immediate display
+    const { data: signedUrlData } = await supabase.storage
+      .from('avatars')
+      .createSignedUrl(avatarPath, 60 * 60 * 24); // 24 hour expiry
+
+    setUploading(false);
+    toast.success('Avatar updated');
+    setProfile({ ...profile, avatar_url: signedUrlData?.signedUrl || avatarPath });
   };
 
   const getInitials = (name: string | null) => {
