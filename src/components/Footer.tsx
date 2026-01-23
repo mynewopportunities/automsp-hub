@@ -19,6 +19,7 @@ const footerLinks = {
     { name: 'Careers', href: '/careers' },
     { name: 'Contact', href: '/contact' },
     { name: 'Support', href: '/support' },
+    { name: 'Live Demo', href: 'https://automspuskg.lovable.app', external: true },
   ],
   legal: [
     { name: 'Privacy Policy', href: '/privacy' },
@@ -28,7 +29,7 @@ const footerLinks = {
 };
 
 const socialLinks = [
-  { name: 'LinkedIn', href: '#', icon: Linkedin },
+  { name: 'LinkedIn', href: 'https://www.linkedin.com/company/automsp', icon: Linkedin },
   { name: 'Twitter', href: '#', icon: Twitter },
   { name: 'YouTube', href: '#', icon: Youtube },
   { name: 'Email', href: 'mailto:info@automsp.us', icon: Mail },
@@ -112,12 +113,23 @@ export const Footer = () => {
               <ul className="space-y-1.5">
                 {footerLinks.company.map((link) => (
                   <li key={link.name}>
-                    <Link
-                      to={link.href}
-                      className="text-xs text-background/70 hover:text-primary transition-colors"
-                    >
-                      {link.name}
-                    </Link>
+                    {'external' in link && link.external ? (
+                      <a
+                        href={link.href}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-xs text-background/70 hover:text-primary transition-colors"
+                      >
+                        {link.name}
+                      </a>
+                    ) : (
+                      <Link
+                        to={link.href}
+                        className="text-xs text-background/70 hover:text-primary transition-colors"
+                      >
+                        {link.name}
+                      </Link>
+                    )}
                   </li>
                 ))}
               </ul>

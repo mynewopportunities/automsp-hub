@@ -137,9 +137,15 @@ const About = () => {
                   <h3 className="text-xl font-semibold text-foreground">{member.name}</h3>
                   <div className="text-sm text-secondary mb-2">{member.role}</div>
                   <p className="text-sm text-muted-foreground mb-4">{member.bio}</p>
-                  <Button variant="ghost" size="sm" className="p-2">
-                    <Linkedin className="w-4 h-4" />
-                  </Button>
+                  <a 
+                    href="https://www.linkedin.com/company/automsp" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                  >
+                    <Button variant="ghost" size="sm" className="p-2">
+                      <Linkedin className="w-4 h-4" />
+                    </Button>
+                  </a>
                 </div>
               ))}
             </div>
