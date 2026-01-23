@@ -9,6 +9,7 @@ import Solutions from "./pages/Solutions";
 import WhyAutoMSP from "./pages/WhyAutoMSP";
 import Resources from "./pages/Resources";
 import About from "./pages/About";
+import Careers from "./pages/Careers";
 import Contact from "./pages/Contact";
 import Terms from "./pages/Terms";
 import Privacy from "./pages/Privacy";
@@ -32,6 +33,7 @@ const App = () => (
             <Route path="/why-automsp" element={<WhyAutoMSP />} />
             <Route path="/resources" element={<Resources />} />
             <Route path="/about" element={<About />} />
+            <Route path="/careers" element={<Careers />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="/terms" element={<Terms />} />
             <Route path="/privacy" element={<Privacy />} />
