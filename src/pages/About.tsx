@@ -1,6 +1,7 @@
 import { Header } from '@/components/Header';
 import { Footer } from '@/components/Footer';
 import { Button } from '@/components/ui/button';
+import { Link } from 'react-router-dom';
 import { Target, Users, Lightbulb, ArrowRight, Linkedin } from 'lucide-react';
 import moizPhoto from '@/assets/moiz-photo.jpg';
 import servicenowLogo from '@/assets/logos/servicenow.svg';
@@ -176,9 +177,11 @@ const About = () => {
             <p className="text-lg text-primary-foreground/80 max-w-2xl mx-auto mb-8">
               We're always looking for talented people who share our passion for transforming MSP operations.
             </p>
-            <Button variant="hero" size="xl">
-              View Open Positions
-              <ArrowRight className="w-5 h-5" />
+            <Button variant="hero" size="xl" asChild>
+              <Link to="/careers">
+                View Open Positions
+                <ArrowRight className="w-5 h-5" />
+              </Link>
             </Button>
           </div>
         </section>
