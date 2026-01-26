@@ -31,9 +31,11 @@ export const CTASection = () => {
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button variant="cta" size="xl">
-                Book Your Free Demo
-                <ArrowRight className="w-5 h-5" />
+              <Button variant="cta" size="xl" asChild>
+                <a href="https://cal.id/automsp/connect-with-it-decision-maker" target="_blank" rel="noopener noreferrer">
+                  Book Your Free Demo
+                  <ArrowRight className="w-5 h-5" />
+                </a>
               </Button>
               <Button variant="outline" size="xl">
                 Talk to Sales
