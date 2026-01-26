@@ -17,6 +17,12 @@ import Auth from "./pages/Auth";
 import Pricing from "./pages/Pricing";
 import Portal from "./pages/Portal";
 import WorkplacePolicy from "./pages/WorkplacePolicy";
+import Support from "./pages/Support";
+import AITriage from "./pages/solutions/AITriage";
+import IntelligentWorkflows from "./pages/solutions/IntelligentWorkflows";
+import ComplianceSLA from "./pages/solutions/ComplianceSLA";
+import Whitepapers from "./pages/resources/Whitepapers";
+import Webinars from "./pages/resources/Webinars";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -31,8 +37,13 @@ const App = () => (
           <Routes>
             <Route path="/" element={<Index />} />
             <Route path="/solutions" element={<Solutions />} />
+            <Route path="/solutions/ai-triage" element={<AITriage />} />
+            <Route path="/solutions/intelligent-workflows" element={<IntelligentWorkflows />} />
+            <Route path="/solutions/compliance-sla" element={<ComplianceSLA />} />
             <Route path="/why-automsp" element={<WhyAutoMSP />} />
             <Route path="/resources" element={<Resources />} />
+            <Route path="/resources/whitepapers" element={<Whitepapers />} />
+            <Route path="/resources/webinars" element={<Webinars />} />
             <Route path="/about" element={<About />} />
             <Route path="/careers" element={<Careers />} />
             <Route path="/contact" element={<Contact />} />
@@ -42,6 +53,7 @@ const App = () => (
             <Route path="/pricing" element={<Pricing />} />
             <Route path="/portal" element={<Portal />} />
             <Route path="/workplace-policy" element={<WorkplacePolicy />} />
+            <Route path="/support" element={<Support />} />
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
             <Route path="*" element={<NotFound />} />
           </Routes>
