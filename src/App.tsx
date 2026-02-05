@@ -30,6 +30,7 @@ const IntelligentWorkflows = lazy(() => import("./pages/solutions/IntelligentWor
 const ComplianceSLA = lazy(() => import("./pages/solutions/ComplianceSLA"));
 const Whitepapers = lazy(() => import("./pages/resources/Whitepapers"));
 const Webinars = lazy(() => import("./pages/resources/Webinars"));
+ const AdminSubmissions = lazy(() => import("./pages/admin/Submissions"));
 
 const queryClient = new QueryClient();
 
@@ -69,6 +70,7 @@ const App = () => (
               <Route path="/portal" element={<Portal />} />
               <Route path="/workplace-policy" element={<WorkplacePolicy />} />
               <Route path="/support" element={<Support />} />
+               <Route path="/admin/submissions" element={<AdminSubmissions />} />
               {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
               <Route path="*" element={<NotFound />} />
             </Routes>
