@@ -8,8 +8,29 @@ const Contact = () => {
   return (
     <HelmetProvider>
       <Helmet>
-        <title>Contact Us | AutoMSP - AI Automation for MSPs</title>
+        <title>Contact AutoMSP | Talk to Sales or Request a Demo</title>
         <meta name="description" content="Get in touch with AutoMSP. Request a demo, talk to sales, or explore partnership opportunities for ServiceNow automation." />
+        <link rel="canonical" href="https://automsp.us/contact" />
+        <meta property="og:title" content="Contact AutoMSP" />
+        <meta property="og:description" content="Talk to sales or request a 30-minute demo." />
+        <meta property="og:url" content="https://automsp.us/contact" />
+        <meta property="og:type" content="website" />
+        <script type="application/ld+json">{JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "LocalBusiness",
+          name: "AutoMSP",
+          email: "info@automsp.us",
+          telephone: "+1-346-200-3801",
+          url: "https://automsp.us/contact",
+          address: {
+            "@type": "PostalAddress",
+            streetAddress: "C1 - 1003, Burhani Centenary Park, Bhestan",
+            addressLocality: "Surat",
+            addressRegion: "Gujarat",
+            postalCode: "395023",
+            addressCountry: "IN"
+          }
+        })}</script>
       </Helmet>
 
       <div className="min-h-screen bg-background">
