@@ -117,6 +117,19 @@ const Support = () => {
         <title>Support Center | AutoMSP Help & Documentation</title>
         <meta name="description" content="Get help with AutoMSP. Access our knowledge base, contact support, or find answers to common questions about MSP automation and ServiceNow integration." />
         <link rel="canonical" href="https://automsp.us/support" />
+        <meta property="og:title" content="Support Center | AutoMSP" />
+        <meta property="og:description" content="Knowledge base, FAQs, and support for AutoMSP." />
+        <meta property="og:url" content="https://automsp.us/support" />
+        <meta property="og:type" content="website" />
+        <script type="application/ld+json">{JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "FAQPage",
+          mainEntity: faqs.map(f => ({
+            "@type": "Question",
+            name: f.question,
+            acceptedAnswer: { "@type": "Answer", text: f.answer }
+          }))
+        })}</script>
       </Helmet>
       
       <div className="min-h-screen bg-background">

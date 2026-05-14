@@ -79,6 +79,18 @@ const IntelligentWorkflows = () => {
         <title>Intelligent Workflows for ServiceNow | MSP Automation | AutoMSP</title>
         <meta name="description" content="Build intelligent, self-healing workflows for your MSP. Automate ticket resolution, escalations, and routine tasks with AI-powered ServiceNow automation." />
         <link rel="canonical" href="https://automsp.us/solutions/intelligent-workflows" />
+        <meta property="og:title" content="Intelligent Workflows for ServiceNow | AutoMSP" />
+        <meta property="og:description" content="Self-healing workflows and AI-assisted responses for ServiceNow MSPs." />
+        <meta property="og:url" content="https://automsp.us/solutions/intelligent-workflows" />
+        <meta property="og:type" content="website" />
+        <script type="application/ld+json">{JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "Product",
+          name: "AutoMSP Intelligent Workflows",
+          description: "AI-powered workflow automation, self-healing flows, and assisted responses for ServiceNow MSPs.",
+          brand: { "@type": "Brand", name: "AutoMSP" },
+          url: "https://automsp.us/solutions/intelligent-workflows"
+        })}</script>
       </Helmet>
       
       <div className="min-h-screen bg-background">

@@ -12,3 +12,8 @@ Allow: /
 
 User-agent: *
 Allow: /
+Disallow: /admin/
+Disallow: /portal
+Disallow: /auth
+
+Sitemap: https://automsp.us/sitemap.xml

@@ -1,0 +1,24 @@
+# AutoMSP
+
+> AI automation platform for ServiceNow Managed Service Providers (MSPs). AutoMSP delivers AI-powered ticket triage, intelligent workflows, and SLA compliance to reduce SLA breaches and manual effort.
+
+## Pages
+
+- [Home](/): Overview of AutoMSP's AI automation for ServiceNow MSPs.
+- [Solutions](/solutions): All AutoMSP solutions for MSPs.
+- [AI Ticket Triage](/solutions/ai-triage): Automated categorization, prioritization, and routing.
+- [Intelligent Workflows](/solutions/intelligent-workflows): Self-healing automation for ServiceNow.
+- [SLA Compliance](/solutions/compliance-sla): Real-time SLA tracking and breach prevention.
+- [Why AutoMSP](/why-automsp): How AutoMSP compares to native ServiceNow and consulting.
+- [Pricing](/pricing): Standard, Professional, and Enterprise plans.
+- [Resources](/resources): Blog, case studies, whitepapers, and webinars.
+- [About](/about): Mission, values, and team.
+- [Careers](/careers): Open roles at AutoMSP.
+- [Contact](/contact): Talk to sales or request a demo.
+- [Support](/support): Knowledge base and FAQs.
+
+## Optional
+
+- [Terms](/terms): Terms of service.
+- [Privacy](/privacy): Privacy policy.
+- [Workplace Policy](/workplace-policy): Workplace policies.
