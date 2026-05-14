@@ -58,6 +58,15 @@ const solutions = [
 const Solutions = () => {
   return (
     <div className="min-h-screen bg-background">
+      <Helmet>
+        <title>AutoMSP Solutions | AI Automation for ServiceNow MSPs</title>
+        <meta name="description" content="Explore AutoMSP solutions: AI ticket triage, intelligent workflows, and SLA compliance for ServiceNow MSPs." />
+        <link rel="canonical" href="https://automsp.us/solutions" />
+        <meta property="og:title" content="AutoMSP Solutions | AI Automation for ServiceNow MSPs" />
+        <meta property="og:description" content="Explore AutoMSP solutions: AI ticket triage, intelligent workflows, and SLA compliance for ServiceNow MSPs." />
+        <meta property="og:url" content="https://automsp.us/solutions" />
+        <meta property="og:type" content="website" />
+      </Helmet>
       <Header />
       <main className="pt-24">
         {/* Hero Section */}

@@ -84,6 +84,15 @@ const Resources = () => {
 
   return (
     <div className="min-h-screen bg-background">
+      <Helmet>
+        <title>Resources | AutoMSP Blog, Case Studies & Whitepapers</title>
+        <meta name="description" content="Read AutoMSP blog posts, case studies, whitepapers, and webinars on AI-powered MSP automation and ServiceNow integration." />
+        <link rel="canonical" href="https://automsp.us/resources" />
+        <meta property="og:title" content="Resources | AutoMSP Blog, Case Studies & Whitepapers" />
+        <meta property="og:description" content="Read AutoMSP blog posts, case studies, whitepapers, and webinars on AI-powered MSP automation and ServiceNow integration." />
+        <meta property="og:url" content="https://automsp.us/resources" />
+        <meta property="og:type" content="website" />
+      </Helmet>
       <Header />
       <main className="pt-24">
         {/* Hero */}

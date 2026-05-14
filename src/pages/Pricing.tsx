@@ -90,6 +90,15 @@ const Pricing = () => {
 
   return (
     <div className="min-h-screen bg-background">
+      <Helmet>
+        <title>Pricing | AutoMSP Plans for MSPs</title>
+        <meta name="description" content="Transparent AutoMSP pricing for MSPs. Standard, Professional, and Enterprise plans with monthly or yearly billing in USD or INR." />
+        <link rel="canonical" href="https://automsp.us/pricing" />
+        <meta property="og:title" content="Pricing | AutoMSP Plans for MSPs" />
+        <meta property="og:description" content="Transparent AutoMSP pricing for MSPs. Standard, Professional, and Enterprise plans with monthly or yearly billing in USD or INR." />
+        <meta property="og:url" content="https://automsp.us/pricing" />
+        <meta property="og:type" content="website" />
+      </Helmet>
       <Header />
       <main className="pt-40 pb-20">
         {/* Hero Section */}

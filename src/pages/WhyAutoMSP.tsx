@@ -82,6 +82,15 @@ const differentiators = [
 const WhyAutoMSP = () => {
   return (
     <div className="min-h-screen bg-background">
+      <Helmet>
+        <title>Why AutoMSP | MSP-First AI vs ServiceNow & Consulting</title>
+        <meta name="description" content="See how AutoMSP compares to native ServiceNow and consulting. MSP-first AI with predictable pricing and rapid time to value." />
+        <link rel="canonical" href="https://automsp.us/why-automsp" />
+        <meta property="og:title" content="Why AutoMSP | MSP-First AI vs ServiceNow & Consulting" />
+        <meta property="og:description" content="See how AutoMSP compares to native ServiceNow and consulting. MSP-first AI with predictable pricing and rapid time to value." />
+        <meta property="og:url" content="https://automsp.us/why-automsp" />
+        <meta property="og:type" content="website" />
+      </Helmet>
       <Header />
       <main className="pt-24">
         {/* Hero */}
