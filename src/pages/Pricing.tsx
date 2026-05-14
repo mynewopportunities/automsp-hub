@@ -98,6 +98,14 @@ const Pricing = () => {
         <meta property="og:description" content="Transparent AutoMSP pricing for MSPs. Standard, Professional, and Enterprise plans with monthly or yearly billing in USD or INR." />
         <meta property="og:url" content="https://automsp.us/pricing" />
         <meta property="og:type" content="website" />
+        <script type="application/ld+json">{JSON.stringify({
+          "@context": "https://schema.org",
+          "@graph": [
+            { "@type": "Product", name: "AutoMSP Standard", description: "Up to 500 tickets/month, basic AI routing, email integration.", brand: { "@type": "Brand", name: "AutoMSP" }, offers: { "@type": "Offer", price: "299", priceCurrency: "USD", url: "https://automsp.us/pricing" } },
+            { "@type": "Product", name: "AutoMSP Professional", description: "Comprehensive automation for growing MSPs.", brand: { "@type": "Brand", name: "AutoMSP" }, offers: { "@type": "Offer", price: "599", priceCurrency: "USD", url: "https://automsp.us/pricing" } },
+            { "@type": "Product", name: "AutoMSP Enterprise", description: "Enterprise-grade AI automation with dedicated support.", brand: { "@type": "Brand", name: "AutoMSP" }, offers: { "@type": "Offer", price: "999", priceCurrency: "USD", url: "https://automsp.us/pricing" } }
+          ]
+        })}</script>
       </Helmet>
       <Header />
       <main className="pt-40 pb-20">
