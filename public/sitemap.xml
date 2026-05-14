@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url><loc>https://automsp.us/</loc><changefreq>weekly</changefreq><priority>1.0</priority></url>
+  <url><loc>https://automsp.us/solutions</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://automsp.us/solutions/ai-triage</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://automsp.us/solutions/intelligent-workflows</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://automsp.us/solutions/compliance-sla</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://automsp.us/why-automsp</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://automsp.us/pricing</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://automsp.us/resources</loc><changefreq>weekly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://automsp.us/resources/whitepapers</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://automsp.us/resources/webinars</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://automsp.us/about</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://automsp.us/careers</loc><changefreq>weekly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://automsp.us/contact</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://automsp.us/support</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://automsp.us/terms</loc><changefreq>yearly</changefreq><priority>0.3</priority></url>
+  <url><loc>https://automsp.us/privacy</loc><changefreq>yearly</changefreq><priority>0.3</priority></url>
+  <url><loc>https://automsp.us/workplace-policy</loc><changefreq>yearly</changefreq><priority>0.3</priority></url>
+</urlset>
