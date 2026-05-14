@@ -71,6 +71,18 @@ const ComplianceSLA = () => {
         <title>SLA Compliance & Management for MSPs | AutoMSP</title>
         <meta name="description" content="Achieve 99%+ SLA compliance with AI-powered monitoring and proactive breach prevention. Automated reporting for SOC 2, HIPAA, and GDPR compliance." />
         <link rel="canonical" href="https://automsp.us/solutions/compliance-sla" />
+        <meta property="og:title" content="SLA Compliance & Management for MSPs | AutoMSP" />
+        <meta property="og:description" content="99%+ SLA compliance with proactive breach prevention and automated audit reporting." />
+        <meta property="og:url" content="https://automsp.us/solutions/compliance-sla" />
+        <meta property="og:type" content="website" />
+        <script type="application/ld+json">{JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "Product",
+          name: "AutoMSP SLA Compliance",
+          description: "Real-time SLA tracking, breach prevention, and automated compliance reporting for ServiceNow MSPs.",
+          brand: { "@type": "Brand", name: "AutoMSP" },
+          url: "https://automsp.us/solutions/compliance-sla"
+        })}</script>
       </Helmet>
       
       <div className="min-h-screen bg-background">

@@ -1,3 +1,4 @@
+import { Helmet } from 'react-helmet-async';
 import { Header } from '@/components/Header';
 import { Hero } from '@/components/Hero';
 import { TrustedBy } from '@/components/TrustedBy';
@@ -13,6 +14,15 @@ import { TeamAvatars } from '@/components/TeamAvatars';
 const Index = () => {
   return (
     <div className="min-h-screen">
+      <Helmet>
+        <title>AutoMSP – AI Automation for ServiceNow MSPs</title>
+        <meta name="description" content="AI-powered ticket triage and intelligent workflows for ServiceNow MSPs. Cut SLA breaches and manual effort without expensive consulting." />
+        <link rel="canonical" href="https://automsp.us/" />
+        <meta property="og:title" content="AutoMSP – AI Automation for ServiceNow MSPs" />
+        <meta property="og:description" content="AI-powered ticket triage and intelligent workflows for ServiceNow MSPs." />
+        <meta property="og:url" content="https://automsp.us/" />
+        <meta property="og:type" content="website" />
+      </Helmet>
       <Header />
       <main>
         <Hero />

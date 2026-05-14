@@ -61,9 +61,21 @@ const AITriage = () => {
   return (
     <>
       <Helmet>
-        <title>AI Ticket Triage for MSPs | Intelligent ServiceNow Automation | AutoMSP</title>
+        <title>AI Ticket Triage for ServiceNow MSPs | AutoMSP</title>
         <meta name="description" content="Automate ticket triage with AI. Reduce response times by 65% with intelligent categorization, priority prediction, and smart routing for ServiceNow MSPs." />
         <link rel="canonical" href="https://automsp.us/solutions/ai-triage" />
+        <meta property="og:title" content="AI Ticket Triage for ServiceNow MSPs | AutoMSP" />
+        <meta property="og:description" content="Automate ticket triage with AI. 65% faster response, smart routing, native ServiceNow integration." />
+        <meta property="og:url" content="https://automsp.us/solutions/ai-triage" />
+        <meta property="og:type" content="website" />
+        <script type="application/ld+json">{JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "Product",
+          name: "AutoMSP AI Ticket Triage",
+          description: "AI-powered ticket triage, categorization, and routing for ServiceNow MSPs.",
+          brand: { "@type": "Brand", name: "AutoMSP" },
+          url: "https://automsp.us/solutions/ai-triage"
+        })}</script>
       </Helmet>
       
       <div className="min-h-screen bg-background">
